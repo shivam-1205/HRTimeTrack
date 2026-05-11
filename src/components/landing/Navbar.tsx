@@ -20,9 +20,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50 border-b border-outline-variant shadow-sm h-16 px-6 flex items-center justify-between w-full">
+    <header className="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm h-16 px-6 flex items-center justify-between w-full">
       <div className="flex items-center gap-4">
-        <span className="text-2xl font-bold text-[#4F46E5]">Portal</span>
+        <span className="text-2xl font-bold text-[#4F46E5]">Shivam</span>
 
         <nav className="hidden md:flex gap-6 ml-6">
           <Link
