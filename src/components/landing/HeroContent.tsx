@@ -28,12 +28,12 @@ export default function HeroContent() {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 mt-2">
-        <button className="px-8 py-4 bg-[#4F46E5] text-white rounded-xl shadow-md hover:opacity-90 transition flex items-center gap-2">
+        <button className="px-8 py-3 bg-[#4F46E5] text-white rounded-xl shadow-md hover:opacity-90 transition flex items-center gap-2">
           Start Free Trial
           <ArrowForwardIcon />
         </button>
 
-        <button className="px-8 py-4 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 transition flex items-center gap-2">
+        <button className="px-8 py-3 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 transition flex items-center gap-2">
           <PlayCircleIcon />
           Watch Demo
         </button>

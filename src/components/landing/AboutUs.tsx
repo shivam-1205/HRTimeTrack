@@ -89,7 +89,7 @@ export default function AboutUs() {
                 productivity is at the core of everything we do.
               </p>
               <div className="flex gap-[16px] pt-[8px]">
-                <button className="mt-2 py-3 px-5 bg-[#3525cd] hover:bg-[#3525cd]/90 text-white rounded-xl text-[13px] leading-[18px] font-medium shadow-md hover:shadow-lg transition-all duration-200">
+                <button className=" mt-2 py-3 px-5 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg transition-all duration-200">
                   Join the Team
                 </button>
               </div>
