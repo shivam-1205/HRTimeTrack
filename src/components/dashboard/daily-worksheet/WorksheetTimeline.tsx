@@ -1,4 +1,7 @@
-import { CARD_SHADOW, TIMELINE_ITEMS } from "./dailyWorksheetData";
+"use client";
+
+import { CARD_SHADOW } from "./dailyWorksheetTypes";
+import { useDailyWorksheet } from "./context/DailyWorksheetContext";
 
 function TimelineDot({ variant }: { variant: "success" | "active" | "upcoming" }) {
   if (variant === "success") {
@@ -17,11 +20,13 @@ function TimelineDot({ variant }: { variant: "success" | "active" | "upcoming" }
 }
 
 export default function WorksheetTimeline() {
+  const { timeline } = useDailyWorksheet();
+
   return (
     <section className={`flex flex-col rounded-xl bg-surface-container-lowest p-4 ${CARD_SHADOW}`}>
       <h3 className="mb-4 text-h3 font-semibold text-on-surface">Today&apos;s Timeline</h3>
       <div className="relative flex-1 space-y-6 border-l-2 border-outline-variant/30 pl-6">
-        {TIMELINE_ITEMS.map((item) => (
+        {timeline.map((item) => (
           <div
             key={item.id}
             className={`relative ${item.variant === "upcoming" ? "opacity-60" : ""}`}

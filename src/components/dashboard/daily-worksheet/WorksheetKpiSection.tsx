@@ -1,12 +1,19 @@
+"use client";
+
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import PendingActionsOutlinedIcon from "@mui/icons-material/PendingActionsOutlined";
 import ScheduleOutlinedIcon from "@mui/icons-material/ScheduleOutlined";
 import SpeedOutlinedIcon from "@mui/icons-material/SpeedOutlined";
 import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
-import { CARD_SHADOW } from "./dailyWorksheetData";
+import { CARD_SHADOW } from "./dailyWorksheetTypes";
+import { useDailyWorksheet } from "./context/DailyWorksheetContext";
 
 export default function WorksheetKpiSection() {
+  const { kpis } = useDailyWorksheet();
+  const { loggedHours, completed, inProgress, productivityScore, dailyGoal } = kpis;
+  const goalOffset = 251.2 - (251.2 * dailyGoal.percent) / 100;
+
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:col-span-8">
@@ -19,11 +26,12 @@ export default function WorksheetKpiSection() {
           </div>
           <div>
             <div className="text-h1 font-semibold text-on-surface">
-              6.5<span className="text-h3 font-normal text-on-surface-variant">/8h</span>
+              {loggedHours.current}
+              <span className="text-h3 font-normal text-on-surface-variant">/{loggedHours.target}h</span>
             </div>
             <div className="mt-1 flex items-center gap-1 text-caption text-emerald-600">
               <ArrowUpwardOutlinedIcon sx={{ fontSize: 14 }} />
-              12% vs yesterday
+              {loggedHours.trendLabel}
             </div>
           </div>
         </article>
@@ -36,8 +44,8 @@ export default function WorksheetKpiSection() {
             <TaskAltOutlinedIcon className="text-emerald-600" sx={{ fontSize: 20 }} />
           </div>
           <div>
-            <div className="text-h1 font-semibold text-on-surface">4</div>
-            <div className="mt-1 text-caption text-on-surface-variant">out of 7 planned</div>
+            <div className="text-h1 font-semibold text-on-surface">{completed.count}</div>
+            <div className="mt-1 text-caption text-on-surface-variant">{completed.label}</div>
           </div>
         </article>
 
@@ -49,8 +57,8 @@ export default function WorksheetKpiSection() {
             <PendingActionsOutlinedIcon className="text-amber-600" sx={{ fontSize: 20 }} />
           </div>
           <div>
-            <div className="text-h1 font-semibold text-on-surface">2</div>
-            <div className="mt-1 text-caption text-amber-600">1 Blocking issue</div>
+            <div className="text-h1 font-semibold text-on-surface">{inProgress.count}</div>
+            <div className="mt-1 text-caption text-amber-600">{inProgress.note}</div>
           </div>
         </article>
 
@@ -66,9 +74,9 @@ export default function WorksheetKpiSection() {
           </div>
           <div className="relative z-10">
             <div className="text-h1 font-semibold text-on-primary-container">
-              92<span className="text-h3 font-normal">%</span>
+              {productivityScore.value}<span className="text-h3 font-normal">%</span>
             </div>
-            <div className="mt-1 text-caption text-on-primary-container/80">Excellent pace</div>
+            <div className="mt-1 text-caption text-on-primary-container/80">{productivityScore.label}</div>
           </div>
         </article>
       </div>
@@ -95,22 +103,22 @@ export default function WorksheetKpiSection() {
               stroke="currentColor"
               strokeWidth="8"
               strokeDasharray="251.2"
-              strokeDashoffset="75.36"
+              strokeDashoffset={goalOffset}
               className="text-primary"
             />
           </svg>
           <div className="absolute flex flex-col items-center">
-            <span className="text-h3 font-bold text-on-surface">70%</span>
+            <span className="text-h3 font-bold text-on-surface">{dailyGoal.percent}%</span>
           </div>
         </div>
         <div className="flex-1">
           <h3 className="mb-1 text-h3 font-semibold text-on-surface">Daily Goal</h3>
           <p className="mb-3 text-caption text-on-surface-variant">
-            1.5 hours remaining to hit target.
+            {dailyGoal.remainingHours} hours remaining to hit target.
           </p>
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              {[1, 2, 3].map((day) => (
+              {Array.from({ length: dailyGoal.streakDays }, (_, i) => i + 1).map((day) => (
                 <div
                   key={day}
                   className="z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-emerald-100"
@@ -120,7 +128,7 @@ export default function WorksheetKpiSection() {
                 </div>
               ))}
             </div>
-            <span className="text-caption text-on-surface-variant">3 day streak 🔥</span>
+            <span className="text-caption text-on-surface-variant">{dailyGoal.streakDays} day streak 🔥</span>
           </div>
         </div>
       </article>

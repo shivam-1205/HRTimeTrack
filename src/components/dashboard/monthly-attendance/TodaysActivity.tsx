@@ -1,4 +1,7 @@
-import { CARD_SHADOW, TIMELINE_ITEMS } from "./monthlyAttendanceData";
+"use client";
+
+import { CARD_SHADOW } from "./monthlyAttendanceTypes";
+import { useMonthlyAttendance } from "./context/MonthlyAttendanceContext";
 
 function TimelineDot({ variant }: { variant: "success" | "default" | "pending" }) {
   if (variant === "success") {
@@ -17,6 +20,10 @@ function TimelineDot({ variant }: { variant: "success" | "default" | "pending" }
 }
 
 export default function TodaysActivity() {
+  const { todayActivity } = useMonthlyAttendance();
+  const { progressPercent, timeline } = todayActivity;
+  const offset = 282.7 - (282.7 * progressPercent) / 100;
+
   return (
     <section className={`rounded-xl bg-surface-container-lowest p-6 ${CARD_SHADOW}`}>
       <h3 className="mb-4 text-h3 font-semibold text-on-surface">Today&apos;s Activity</h3>
@@ -24,14 +31,7 @@ export default function TodaysActivity() {
       <div className="mb-4 flex items-center justify-center border-b border-outline-variant/20 py-4">
         <div className="relative flex h-32 w-32 items-center justify-center">
           <svg className="h-full w-full -rotate-90 transform" viewBox="0 0 100 100">
-            <circle
-              cx="50"
-              cy="50"
-              r="45"
-              fill="transparent"
-              stroke="#dce2f3"
-              strokeWidth="8"
-            />
+            <circle cx="50" cy="50" r="45" fill="transparent" stroke="#dce2f3" strokeWidth="8" />
             <circle
               cx="50"
               cy="50"
@@ -40,12 +40,12 @@ export default function TodaysActivity() {
               stroke="#3525cd"
               strokeWidth="8"
               strokeDasharray="282.7"
-              strokeDashoffset="70.6"
+              strokeDashoffset={offset}
               strokeLinecap="round"
             />
           </svg>
           <div className="absolute flex flex-col items-center">
-            <span className="text-h2 font-semibold text-on-surface">75%</span>
+            <span className="text-h2 font-semibold text-on-surface">{progressPercent}%</span>
             <span className="text-caption text-on-surface-variant">Spent</span>
           </div>
         </div>
@@ -53,11 +53,11 @@ export default function TodaysActivity() {
 
       <div className="relative mt-4 pl-2">
         <div className="absolute top-2 bottom-2 left-[15px] w-px bg-outline-variant/40" />
-        {TIMELINE_ITEMS.map((item, index) => (
+        {timeline.map((item, index) => (
           <div
-            key={item.label}
+            key={item.id}
             className={`relative mb-4 flex gap-4 ${item.variant === "pending" ? "opacity-50" : ""} ${
-              index === TIMELINE_ITEMS.length - 1 ? "mb-0" : ""
+              index === timeline.length - 1 ? "mb-0" : ""
             }`}
           >
             <TimelineDot variant={item.variant} />

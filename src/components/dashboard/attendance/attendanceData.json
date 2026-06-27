@@ -1,0 +1,171 @@
+{
+  "success": true,
+  "message": "Attendance records fetched successfully",
+  "data": {
+    "meta": {
+      "employeeId": "EMP-1024",
+      "employeeName": "Shivam Singh",
+      "month": "June",
+      "year": 2026
+    },
+    "filters": {
+      "months": [
+        { "value": "2026-06", "label": "Current Month (Jun 2026)" },
+        { "value": "2026-05", "label": "May 2026" },
+        { "value": "2026-04", "label": "April 2026" }
+      ],
+      "statuses": [
+        { "value": "all", "label": "All Statuses" },
+        { "value": "present", "label": "Present" },
+        { "value": "late", "label": "Late" },
+        { "value": "absent", "label": "Absent" }
+      ]
+    },
+    "months": {
+      "2026-06": {
+        "monthLabel": "June 2026",
+        "weekDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "legend": [
+          { "status": "present", "label": "Present", "colorClass": "bg-primary-container" },
+          { "status": "late", "label": "Late", "colorClass": "bg-tertiary-container" },
+          { "status": "absent", "label": "Absent", "colorClass": "bg-error-container" }
+        ],
+        "days": [
+          { "status": "empty" },
+          { "day": 1, "status": "present", "checkIn": "11:53", "checkOut": "23:55", "remarks": "Extended client demo session." },
+          { "day": 2, "status": "present", "checkIn": "08:50", "checkOut": "17:00" },
+          { "day": 3, "status": "late", "checkIn": "09:30", "checkOut": "17:30", "remarks": "Traffic delay on commute." },
+          { "day": 4, "status": "present", "checkIn": "08:58", "checkOut": "17:15" },
+          { "day": 5, "status": "present", "checkIn": "09:02", "checkOut": "18:00" },
+          { "day": 6, "status": "weekend" },
+          { "day": 7, "status": "weekend" },
+          { "day": 8, "status": "present", "checkIn": "08:45", "checkOut": "17:00" },
+          { "day": 9, "status": "present", "checkIn": "08:52", "checkOut": "17:10" },
+          { "day": 10, "status": "present", "checkIn": "08:59", "checkOut": "17:05" },
+          { "day": 11, "status": "present", "checkIn": "08:50", "checkOut": "17:00" },
+          { "day": 12, "status": "present", "checkIn": "09:00", "checkOut": "17:20" },
+          { "day": 13, "status": "weekend" },
+          { "day": 14, "status": "weekend" },
+          { "day": 15, "status": "absent", "leaveStatus": "Sick leave" },
+          { "day": 16, "status": "present", "checkIn": "08:48", "checkOut": "17:02" },
+          { "day": 17, "status": "present", "checkIn": "08:55", "checkOut": "17:08" },
+          { "day": 18, "status": "late", "checkIn": "09:25", "checkOut": "17:35" },
+          { "day": 19, "status": "present", "checkIn": "08:51", "checkOut": "17:00" },
+          { "day": 20, "status": "weekend" },
+          { "day": 21, "status": "weekend" },
+          { "day": 22, "status": "present", "checkIn": "08:57", "checkOut": "17:12" },
+          { "day": 23, "status": "present", "checkIn": "08:49", "checkOut": "17:05" },
+          { "day": 24, "status": "present", "checkIn": "09:01", "checkOut": "17:18" },
+          { "day": 25, "status": "present", "checkIn": "08:50", "checkOut": "18:15" },
+          { "day": 26, "status": "present", "checkIn": "09:05", "checkOut": "--" },
+          { "day": 27, "status": "weekend" },
+          { "day": 28, "status": "weekend" },
+          { "day": 29, "status": "present", "checkIn": "08:54", "checkOut": "17:00" },
+          { "day": 30, "status": "present", "checkIn": "08:58", "checkOut": "17:10" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" }
+        ]
+      },
+      "2026-05": {
+        "monthLabel": "May 2026",
+        "weekDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "legend": [
+          { "status": "present", "label": "Present", "colorClass": "bg-primary-container" },
+          { "status": "late", "label": "Late", "colorClass": "bg-tertiary-container" },
+          { "status": "absent", "label": "Absent", "colorClass": "bg-error-container" }
+        ],
+        "days": [
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "day": 1, "status": "weekend" },
+          { "day": 2, "status": "weekend" },
+          { "day": 3, "status": "weekend" },
+          { "day": 4, "status": "present", "checkIn": "08:55", "checkOut": "17:00" },
+          { "day": 5, "status": "present", "checkIn": "09:00", "checkOut": "17:10" },
+          { "day": 6, "status": "late", "checkIn": "09:20", "checkOut": "17:30" },
+          { "day": 7, "status": "present", "checkIn": "08:48", "checkOut": "17:05" },
+          { "day": 8, "status": "weekend" },
+          { "day": 9, "status": "weekend" },
+          { "day": 10, "status": "present", "checkIn": "08:52", "checkOut": "17:00" },
+          { "day": 11, "status": "present", "checkIn": "08:50", "checkOut": "17:15" },
+          { "day": 12, "status": "absent", "leaveStatus": "Casual leave" },
+          { "day": 13, "status": "present", "checkIn": "08:57", "checkOut": "17:00" },
+          { "day": 14, "status": "present", "checkIn": "09:01", "checkOut": "17:20" },
+          { "day": 15, "status": "weekend" },
+          { "day": 16, "status": "weekend" },
+          { "day": 17, "status": "present", "checkIn": "08:45", "checkOut": "17:00" },
+          { "day": 18, "status": "late", "checkIn": "09:35", "checkOut": "17:40" },
+          { "day": 19, "status": "present", "checkIn": "08:50", "checkOut": "17:05" },
+          { "day": 20, "status": "present", "checkIn": "08:58", "checkOut": "17:10" },
+          { "day": 21, "status": "weekend" },
+          { "day": 22, "status": "weekend" },
+          { "day": 23, "status": "present", "checkIn": "08:53", "checkOut": "17:00" },
+          { "day": 24, "status": "present", "checkIn": "08:49", "checkOut": "17:08" },
+          { "day": 25, "status": "present", "checkIn": "09:00", "checkOut": "17:15" },
+          { "day": 26, "status": "present", "checkIn": "08:51", "checkOut": "17:00" },
+          { "day": 27, "status": "weekend" },
+          { "day": 28, "status": "weekend" },
+          { "day": 29, "status": "present", "checkIn": "08:55", "checkOut": "17:05" },
+          { "day": 30, "status": "present", "checkIn": "08:47", "checkOut": "17:00" },
+          { "day": 31, "status": "present", "checkIn": "08:59", "checkOut": "17:12" }
+        ]
+      },
+      "2026-04": {
+        "monthLabel": "April 2026",
+        "weekDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "legend": [
+          { "status": "present", "label": "Present", "colorClass": "bg-primary-container" },
+          { "status": "late", "label": "Late", "colorClass": "bg-tertiary-container" },
+          { "status": "absent", "label": "Absent", "colorClass": "bg-error-container" }
+        ],
+        "days": [
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "day": 1, "status": "weekend" },
+          { "day": 2, "status": "weekend" },
+          { "day": 3, "status": "present", "checkIn": "08:50", "checkOut": "17:00" },
+          { "day": 4, "status": "present", "checkIn": "08:55", "checkOut": "17:10" },
+          { "day": 5, "status": "late", "checkIn": "09:15", "checkOut": "17:25" },
+          { "day": 6, "status": "present", "checkIn": "08:48", "checkOut": "17:00" },
+          { "day": 7, "status": "weekend" },
+          { "day": 8, "status": "weekend" },
+          { "day": 9, "status": "present", "checkIn": "08:52", "checkOut": "17:05" },
+          { "day": 10, "status": "absent", "leaveStatus": "Medical leave" },
+          { "day": 11, "status": "present", "checkIn": "08:57", "checkOut": "17:00" },
+          { "day": 12, "status": "present", "checkIn": "09:00", "checkOut": "17:20" },
+          { "day": 13, "status": "weekend" },
+          { "day": 14, "status": "weekend" },
+          { "day": 15, "status": "present", "checkIn": "08:45", "checkOut": "17:00" },
+          { "day": 16, "status": "present", "checkIn": "08:50", "checkOut": "17:08" },
+          { "day": 17, "status": "late", "checkIn": "09:28", "checkOut": "17:35" },
+          { "day": 18, "status": "present", "checkIn": "08:51", "checkOut": "17:00" },
+          { "day": 19, "status": "weekend" },
+          { "day": 20, "status": "weekend" },
+          { "day": 21, "status": "present", "checkIn": "08:53", "checkOut": "17:00" },
+          { "day": 22, "status": "present", "checkIn": "08:49", "checkOut": "17:05" },
+          { "day": 23, "status": "present", "checkIn": "09:02", "checkOut": "17:15" },
+          { "day": 24, "status": "present", "checkIn": "08:50", "checkOut": "17:00" },
+          { "day": 25, "status": "weekend" },
+          { "day": 26, "status": "weekend" },
+          { "day": 27, "status": "present", "checkIn": "08:55", "checkOut": "17:10" },
+          { "day": 28, "status": "present", "checkIn": "08:47", "checkOut": "17:00" },
+          { "day": 29, "status": "present", "checkIn": "08:59", "checkOut": "17:12" },
+          { "day": 30, "status": "present", "checkIn": "08:52", "checkOut": "17:05" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" },
+          { "status": "empty" }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "success": true,
+  "message": "Daily worksheet fetched successfully",
+  "data": {
+    "meta": {
+      "date": "Thursday, Jun 26, 2026",
+      "dateIso": "2026-06-26",
+      "userName": "Shivam Singh",
+      "activeProjects": 4
+    },
+    "kpis": {
+      "loggedHours": {
+        "current": 6.5,
+        "target": 8,
+        "trendPercent": 12,
+        "trendLabel": "12% vs yesterday"
+      },
+      "completed": {
+        "count": 4,
+        "planned": 7,
+        "label": "out of 7 planned"
+      },
+      "inProgress": {
+        "count": 2,
+        "note": "1 Blocking issue"
+      },
+      "productivityScore": {
+        "value": 92,
+        "label": "Excellent pace"
+      },
+      "dailyGoal": {
+        "percent": 70,
+        "remainingHours": 1.5,
+        "streakDays": 3
+      }
+    },
+    "projectFilters": [
+      { "value": "all", "label": "All Projects" },
+      { "value": "hrms-redesign", "label": "HRMS Redesign" },
+      { "value": "core-services", "label": "Core Services" },
+      { "value": "frontend", "label": "Frontend" },
+      { "value": "api", "label": "API" }
+    ],
+    "formOptions": {
+      "priorities": [
+        { "value": "low", "label": "Low" },
+        { "value": "med", "label": "Medium" },
+        { "value": "high", "label": "High" }
+      ],
+      "statuses": [
+        { "value": "pending", "label": "Pending" },
+        { "value": "in_progress", "label": "In Progress" },
+        { "value": "done", "label": "Done" }
+      ],
+      "workCategories": [
+        "Development",
+        "Design",
+        "Testing",
+        "Documentation",
+        "Meeting",
+        "Support"
+      ]
+    },
+    "tasks": [
+      {
+        "id": "1",
+        "task": "Design System Audit",
+        "project": "HRMS Redesign",
+        "clientName": "Internal",
+        "taskDescription": "Audit design tokens and component consistency across dashboard modules.",
+        "workCategory": "Design",
+        "priority": "high",
+        "estimatedHours": "2.0",
+        "actualHours": "2.5",
+        "status": "done",
+        "startTime": "09:05",
+        "endTime": "11:35",
+        "remarks": "Completed ahead of schedule.",
+        "projectFilterKey": "hrms-redesign"
+      },
+      {
+        "id": "2",
+        "task": "API Endpoint Integration",
+        "project": "Core Services",
+        "clientName": "Acme Corp",
+        "taskDescription": "Integrate attendance and worksheet APIs with auth middleware.",
+        "workCategory": "Development",
+        "priority": "med",
+        "estimatedHours": "3.0",
+        "actualHours": "1.5",
+        "status": "in_progress",
+        "startTime": "11:45",
+        "endTime": "13:15",
+        "remarks": "Blocked on rate-limit config.",
+        "projectFilterKey": "core-services"
+      },
+      {
+        "id": "3",
+        "task": "Unit Testing",
+        "project": "Core Services",
+        "clientName": "Acme Corp",
+        "taskDescription": "Write unit tests for worksheet service layer.",
+        "workCategory": "Testing",
+        "priority": "med",
+        "estimatedHours": "1.5",
+        "actualHours": "--",
+        "status": "pending",
+        "startTime": "",
+        "endTime": "",
+        "remarks": "",
+        "projectFilterKey": "core-services"
+      },
+      {
+        "id": "4",
+        "task": "Dashboard CSS Isolation",
+        "project": "HRMS Redesign",
+        "clientName": "Internal",
+        "taskDescription": "Separate landing and dashboard theme tokens.",
+        "workCategory": "Development",
+        "priority": "high",
+        "estimatedHours": "2.0",
+        "actualHours": "2.0",
+        "status": "done",
+        "startTime": "14:00",
+        "endTime": "16:00",
+        "remarks": "",
+        "projectFilterKey": "hrms-redesign"
+      },
+      {
+        "id": "5",
+        "task": "Employee Handbook Page",
+        "project": "Frontend",
+        "clientName": "Internal",
+        "taskDescription": "Build handbook page with tabs and table of contents.",
+        "workCategory": "Development",
+        "priority": "med",
+        "estimatedHours": "1.0",
+        "actualHours": "0.5",
+        "status": "in_progress",
+        "startTime": "16:15",
+        "endTime": "16:45",
+        "remarks": "TOC scroll-spy in progress.",
+        "projectFilterKey": "frontend"
+      }
+    ],
+    "timeline": [
+      {
+        "id": "1",
+        "time": "09:05 AM",
+        "title": "Started Work",
+        "subtitle": "Design System Audit",
+        "variant": "success"
+      },
+      {
+        "id": "2",
+        "time": "11:30 AM",
+        "title": "Current Focus",
+        "subtitle": "API Endpoint Integration",
+        "variant": "active"
+      },
+      {
+        "id": "3",
+        "time": "02:00 PM",
+        "title": "Scheduled Break",
+        "variant": "upcoming"
+      },
+      {
+        "id": "4",
+        "time": "06:00 PM",
+        "title": "End of Day",
+        "variant": "upcoming"
+      }
+    ],
+    "weeklyAnalytics": {
+      "weekLabel": "Jun 22 – 28, 2026",
+      "targetHours": 8,
+      "days": [
+        { "label": "Mon", "date": "2026-06-22", "hours": 7.5, "isToday": false },
+        { "label": "Tue", "date": "2026-06-23", "hours": 8.0, "isToday": false },
+        { "label": "Wed", "date": "2026-06-24", "hours": 6.5, "isToday": false },
+        { "label": "Thu", "date": "2026-06-25", "hours": 7.0, "isToday": false },
+        { "label": "Fri", "date": "2026-06-26", "hours": 6.5, "isToday": true },
+        { "label": "Sat", "date": "2026-06-27", "hours": 0, "isToday": false },
+        { "label": "Sun", "date": "2026-06-28", "hours": 0, "isToday": false }
+      ]
+    },
+    "blockers": [
+      {
+        "id": "b1",
+        "title": "API rate limiting on staging",
+        "project": "Core Services",
+        "severity": "high",
+        "reportedAt": "10:15 AM",
+        "status": "open"
+      },
+      {
+        "id": "b2",
+        "title": "Design review pending sign-off",
+        "project": "HRMS Redesign",
+        "severity": "med",
+        "reportedAt": "Yesterday",
+        "status": "open"
+      }
+    ],
+    "activityFeed": [
+      {
+        "id": "a1",
+        "message": "Submitted daily worksheet for Jun 25",
+        "time": "06:12 PM",
+        "type": "submit"
+      },
+      {
+        "id": "a2",
+        "message": "Added task: Dashboard CSS Isolation",
+        "time": "02:05 PM",
+        "type": "task"
+      },
+      {
+        "id": "a3",
+        "message": "Saved worksheet draft",
+        "time": "11:30 AM",
+        "type": "draft"
+      },
+      {
+        "id": "a4",
+        "message": "Marked Design System Audit as Done",
+        "time": "11:35 AM",
+        "type": "status"
+      }
+    ],
+    "footer": {
+      "totalSubmissions": 12,
+      "submissionsLabel": "12 Logs Today",
+      "productivityStatus": "On Track"
+    }
+  }
+}

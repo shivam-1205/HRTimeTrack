@@ -1,0 +1,327 @@
+{
+  "success": true,
+  "message": "Monthly attendance overview fetched successfully",
+  "data": {
+    "meta": {
+      "employeeName": "Shivam Singh",
+      "employeeId": "EMP-1024",
+      "department": "Product Design",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuA1rqijmmF8-AAQSSbBY8vYmoZSAC_YdQrZmiX4ooDhF4rZ7TWvdArlYDtqEMRxsi50OlVRfLjW8GyXHDVAGO1CL_3BmZ1s5lDMhesFSXMUgGw7_Eil0BkXXmUxMpLJYWoGblJqrvuzzRwznpuboD8XAa9e2nqP6mDYayI7eyh7i5IdPVz0cBdRB3L1VmI9Cs3UQ2Kj31pv8tyqd-FxVaGrk1nWGm6WGC5dn3XRL0AsoL-L_UktljaIyg",
+      "monthLabel": "June 2026"
+    },
+    "profile": {
+      "workingHours": { "hours": 6, "minutes": 42 },
+      "loginTime": "09:05 AM",
+      "status": "Present",
+      "isClockedIn": true,
+      "expectedClockOut": "06:30 PM"
+    },
+    "alert": {
+      "title": "Action Required",
+      "message": "You have 2 days with incomplete attendance logs this week.",
+      "incompleteLogs": [
+        {
+          "id": "inc-1",
+          "date": "Jun 12, 2026",
+          "day": "Wednesday",
+          "issue": "Missing clock-out",
+          "clockIn": "09:15 AM"
+        },
+        {
+          "id": "inc-2",
+          "date": "Jun 10, 2026",
+          "day": "Monday",
+          "issue": "Missing clock-out",
+          "clockIn": "09:02 AM"
+        }
+      ]
+    },
+    "kpis": [
+      {
+        "id": "attendance",
+        "label": "Attendance %",
+        "value": "94.2%",
+        "subtext": "+2.1% from last month",
+        "subtextClass": "text-emerald-600",
+        "icon": "percent",
+        "iconClass": "bg-primary/10 text-primary",
+        "trend": true,
+        "detail": "Your attendance rate is 94.2% for June 2026, up 2.1% from May."
+      },
+      {
+        "id": "present",
+        "label": "Present Days",
+        "value": "18",
+        "subtext": "Out of 22 working days",
+        "subtextClass": "text-on-surface-variant",
+        "icon": "check_circle",
+        "iconClass": "bg-emerald-500/10 text-emerald-600",
+        "detail": "You were present on 18 of 22 scheduled working days this month."
+      },
+      {
+        "id": "late",
+        "label": "Late Arrivals",
+        "value": "01",
+        "subtext": "Grace late: 02",
+        "subtextClass": "text-on-surface-variant",
+        "icon": "schedule",
+        "iconClass": "bg-amber-500/10 text-amber-600",
+        "detail": "1 late arrival recorded. 2 additional lates were within grace period."
+      },
+      {
+        "id": "missing",
+        "label": "Missing Logouts",
+        "value": "02",
+        "subtext": "Requires action",
+        "subtextClass": "text-error font-medium",
+        "icon": "logout",
+        "iconClass": "bg-error/10 text-error",
+        "alertBorder": true,
+        "detail": "2 days have missing clock-out entries. Please regularize to complete your logs."
+      }
+    ],
+    "chart": {
+      "week": {
+        "rangeLabel": "Jun 8 - Jun 14",
+        "bars": [
+          { "id": "w1", "label": "Mon", "hours": 7.5, "heightPercent": 75, "logId": "5" },
+          { "id": "w2", "label": "Tue", "hours": 8.2, "heightPercent": 82, "logId": "4" },
+          { "id": "w3", "label": "Wed", "hours": 6.0, "heightPercent": 60, "logId": "3" },
+          { "id": "w4", "label": "Thu", "hours": 0, "heightPercent": 20, "logId": "8", "isAbsent": true },
+          { "id": "w5", "label": "Fri", "hours": 9.1, "heightPercent": 91, "logId": "2" },
+          { "id": "w6", "label": "Sat", "hours": 0, "heightPercent": 10, "logId": null },
+          { "id": "w7", "label": "Sun", "hours": 0, "heightPercent": 10, "logId": null }
+        ]
+      },
+      "month": {
+        "rangeLabel": "Jun 1 - Jun 30",
+        "bars": [
+          { "id": "m1", "label": "W1", "hours": 38.5, "heightPercent": 40, "logId": "6" },
+          { "id": "m2", "label": "W2", "hours": 41.2, "heightPercent": 70, "logId": "5" },
+          { "id": "m3", "label": "W3", "hours": 39.0, "heightPercent": 55, "logId": "4" },
+          { "id": "m4", "label": "W4", "hours": 12.0, "heightPercent": 20, "logId": "3", "isAbsent": true },
+          { "id": "m5", "label": "W5", "hours": 42.8, "heightPercent": 85, "logId": "2" },
+          { "id": "m6", "label": "W6", "hours": 44.1, "heightPercent": 95, "logId": "1" },
+          { "id": "m7", "label": "W7", "hours": 28.5, "heightPercent": 60, "logId": "1" },
+          { "id": "m8", "label": "W8", "hours": 40.0, "heightPercent": 45, "logId": "7" }
+        ]
+      }
+    },
+    "scores": {
+      "attendanceScore": 9.4,
+      "attendanceMax": 10,
+      "attendancePercent": 94,
+      "consistency": "High",
+      "consistencyNote": "Top 15% in department"
+    },
+    "todayActivity": {
+      "progressPercent": 75,
+      "timeline": [
+        { "id": "t1", "label": "Clocked In", "time": "09:05 AM", "variant": "success" },
+        { "id": "t2", "label": "Tea Break", "time": "11:15 AM - 11:30 AM (15m)", "variant": "default" },
+        { "id": "t3", "label": "Lunch Break", "time": "01:30 PM - 02:15 PM (45m)", "variant": "default" },
+        { "id": "t4", "label": "Expected Clock Out", "time": "06:30 PM", "variant": "pending" }
+      ]
+    },
+    "recentLogs": [
+      {
+        "id": "1",
+        "date": "Jun 14, 2026",
+        "day": "Friday",
+        "status": "Present",
+        "statusVariant": "present",
+        "clockIn": "09:05 AM",
+        "clockOut": "--:-- --",
+        "totalHrs": "06h 42m",
+        "action": "menu",
+        "detail": {
+          "dateLabel": "Friday, Jun 14, 2026",
+          "onTimeLabel": "On Time",
+          "loginTime": "09:05 AM",
+          "logoutTime": "--",
+          "liveSession": "Open",
+          "totalWorked": "06h 42m",
+          "lateBy": "On time",
+          "leaveStatus": "No leave",
+          "remarks": "Currently clocked in."
+        }
+      },
+      {
+        "id": "2",
+        "date": "Jun 13, 2026",
+        "day": "Thursday",
+        "status": "Present",
+        "statusVariant": "present",
+        "clockIn": "08:55 AM",
+        "clockOut": "06:10 PM",
+        "totalHrs": "09h 15m",
+        "action": "menu",
+        "detail": {
+          "dateLabel": "Thursday, Jun 13, 2026",
+          "onTimeLabel": "On Time",
+          "loginTime": "08:55 AM",
+          "logoutTime": "06:10 PM",
+          "liveSession": "Closed",
+          "totalWorked": "09h 15m",
+          "lateBy": "On time",
+          "leaveStatus": "No leave",
+          "remarks": "—"
+        }
+      },
+      {
+        "id": "3",
+        "date": "Jun 12, 2026",
+        "day": "Wednesday",
+        "dayClass": "text-error",
+        "status": "Missing Out",
+        "statusVariant": "missing",
+        "clockIn": "09:15 AM",
+        "clockOut": "Missing",
+        "clockOutClass": "text-error font-medium",
+        "totalHrs": "--",
+        "action": "fix",
+        "highlight": true,
+        "detail": {
+          "dateLabel": "Wednesday, Jun 12, 2026",
+          "onTimeLabel": "Late",
+          "loginTime": "09:15 AM",
+          "logoutTime": "—",
+          "liveSession": "Closed",
+          "totalWorked": "--",
+          "lateBy": "15 min",
+          "leaveStatus": "No leave",
+          "remarks": "Clock-out missing. Regularization required."
+        }
+      },
+      {
+        "id": "4",
+        "date": "Jun 11, 2026",
+        "day": "Tuesday",
+        "status": "Present",
+        "statusVariant": "present",
+        "clockIn": "08:50 AM",
+        "clockOut": "05:45 PM",
+        "totalHrs": "08h 55m",
+        "action": "menu",
+        "detail": {
+          "dateLabel": "Tuesday, Jun 11, 2026",
+          "onTimeLabel": "On Time",
+          "loginTime": "08:50 AM",
+          "logoutTime": "05:45 PM",
+          "liveSession": "Closed",
+          "totalWorked": "08h 55m",
+          "lateBy": "On time",
+          "leaveStatus": "No leave",
+          "remarks": "—"
+        }
+      },
+      {
+        "id": "5",
+        "date": "Jun 10, 2026",
+        "day": "Monday",
+        "dayClass": "text-error",
+        "status": "Missing Out",
+        "statusVariant": "missing",
+        "clockIn": "09:02 AM",
+        "clockOut": "Missing",
+        "clockOutClass": "text-error font-medium",
+        "totalHrs": "--",
+        "action": "fix",
+        "highlight": true,
+        "detail": {
+          "dateLabel": "Monday, Jun 10, 2026",
+          "onTimeLabel": "On Time",
+          "loginTime": "09:02 AM",
+          "logoutTime": "—",
+          "liveSession": "Closed",
+          "totalWorked": "--",
+          "lateBy": "On time",
+          "leaveStatus": "No leave",
+          "remarks": "Clock-out missing. Regularization required."
+        }
+      },
+      {
+        "id": "6",
+        "date": "Jun 9, 2026",
+        "day": "Sunday",
+        "status": "Weekend",
+        "statusVariant": "present",
+        "clockIn": "—",
+        "clockOut": "—",
+        "totalHrs": "—",
+        "action": "menu",
+        "detail": {
+          "dateLabel": "Sunday, Jun 9, 2026",
+          "onTimeLabel": "Weekend",
+          "loginTime": "—",
+          "logoutTime": "—",
+          "liveSession": "Closed",
+          "totalWorked": "—",
+          "lateBy": "—",
+          "leaveStatus": "Weekend",
+          "remarks": "Non-working day"
+        }
+      },
+      {
+        "id": "7",
+        "date": "Jun 8, 2026",
+        "day": "Saturday",
+        "status": "Weekend",
+        "statusVariant": "present",
+        "clockIn": "—",
+        "clockOut": "—",
+        "totalHrs": "—",
+        "action": "menu",
+        "detail": {
+          "dateLabel": "Saturday, Jun 8, 2026",
+          "onTimeLabel": "Weekend",
+          "loginTime": "—",
+          "logoutTime": "—",
+          "liveSession": "Closed",
+          "totalWorked": "—",
+          "lateBy": "—",
+          "leaveStatus": "Weekend",
+          "remarks": "Non-working day"
+        }
+      },
+      {
+        "id": "8",
+        "date": "Jun 7, 2026",
+        "day": "Friday",
+        "status": "Absent",
+        "statusVariant": "missing",
+        "clockIn": "—",
+        "clockOut": "—",
+        "totalHrs": "0h 00m",
+        "action": "fix",
+        "detail": {
+          "dateLabel": "Friday, Jun 7, 2026",
+          "onTimeLabel": "Absent",
+          "loginTime": "—",
+          "logoutTime": "—",
+          "liveSession": "Closed",
+          "totalWorked": "0h 00m",
+          "lateBy": "—",
+          "leaveStatus": "Sick leave",
+          "remarks": "Approved sick leave"
+        }
+      }
+    ],
+    "quickActions": [
+      { "id": "regularize", "label": "Regularization", "icon": "event_available" },
+      { "id": "wfh", "label": "WFH Request", "icon": "home_work" }
+    ],
+    "upcomingHoliday": {
+      "name": "Eid al-Adha",
+      "date": "17 June 2026",
+      "note": "Long weekend incoming!",
+      "description": "Company-wide holiday. Offices will remain closed. Enjoy the long weekend with your family.",
+      "type": "Public Holiday"
+    },
+    "leaveTypes": ["Casual Leave", "Sick Leave", "Earned Leave", "Work From Home", "Half Day"],
+    "formDefaults": {
+      "regularizeReasons": ["Forgot to clock out", "System issue", "On client site", "Other"],
+      "wfhReasons": ["Personal errand", "Health concern", "Weather", "Other"]
+    }
+  }
+}

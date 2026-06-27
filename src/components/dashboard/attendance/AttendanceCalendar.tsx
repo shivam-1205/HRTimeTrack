@@ -1,38 +1,26 @@
-type DayStatus = "present" | "late" | "absent" | "weekend" | "empty";
+"use client";
 
-type CalendarDay = {
-  day?: number;
-  status: DayStatus;
-  checkIn?: string;
-  checkOut?: string;
-};
+import { useAttendance } from "./context/AttendanceContext";
+import type { CalendarDay } from "./attendanceTypes";
 
-const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-const calendarDays: CalendarDay[] = [
-  { status: "empty" },
-  { status: "empty" },
-  { day: 1, status: "present", checkIn: "08:55", checkOut: "17:05" },
-  { day: 2, status: "late", checkIn: "09:30", checkOut: "17:30" },
-  { day: 3, status: "present", checkIn: "08:50", checkOut: "17:00" },
-  { day: 4, status: "present", checkIn: "08:58", checkOut: "17:15" },
-  { day: 5, status: "weekend" },
-  { day: 6, status: "weekend" },
-  { day: 7, status: "absent" },
-  { day: 8, status: "present", checkIn: "08:45", checkOut: "17:00" },
-  { day: 9, status: "present", checkIn: "08:52", checkOut: "17:10" },
-  { day: 10, status: "present", checkIn: "08:59", checkOut: "17:05" },
-  { day: 11, status: "present", checkIn: "08:50", checkOut: "17:00" },
-];
-
-function DayCard({ day }: { day: CalendarDay }) {
+function DayCard({
+  day,
+  onSelect,
+}: {
+  day: CalendarDay;
+  onSelect: (day: CalendarDay) => void;
+}) {
   if (day.status === "empty") {
     return <div className="min-h-[88px] bg-transparent" />;
   }
 
   if (day.status === "weekend") {
     return (
-      <div className="flex min-h-[88px] flex-col justify-between rounded-lg border border-outline-variant/50 bg-surface-container-lowest p-2 opacity-70">
+      <div
+        className={`flex min-h-[88px] flex-col justify-between rounded-lg border border-outline-variant/50 bg-surface-container-lowest p-2 opacity-70 ${
+          day.dimmed ? "opacity-30" : ""
+        }`}
+      >
         <div className="flex justify-end">
           <span className="text-label-md text-outline-variant">{day.day}</span>
         </div>
@@ -61,9 +49,16 @@ function DayCard({ day }: { day: CalendarDay }) {
     },
   }[day.status];
 
+  const isClickable = day.status === "present" || day.status === "late" || day.status === "absent";
+
   return (
-    <div
-      className={`flex min-h-[88px] cursor-pointer flex-col justify-between rounded-lg border border-outline-variant bg-surface p-2 shadow-[0_2px_4px_-1px_rgba(53,37,205,0.03)] transition-shadow hover:shadow-md ${statusConfig.borderClass}`}
+    <button
+      type="button"
+      onClick={() => isClickable && onSelect(day)}
+      disabled={!isClickable}
+      className={`flex min-h-[88px] w-full flex-col justify-between rounded-lg border border-outline-variant bg-surface p-2 text-left shadow-[0_2px_4px_-1px_rgba(53,37,205,0.03)] transition-shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:cursor-default ${statusConfig.borderClass} ${
+        day.dimmed ? "opacity-30" : ""
+      }`}
     >
       <div className="flex items-start justify-between">
         <span
@@ -83,28 +78,25 @@ function DayCard({ day }: { day: CalendarDay }) {
           </>
         )}
       </div>
-    </div>
+    </button>
   );
 }
 
 export default function AttendanceCalendar() {
+  const { monthData, calendarDays, openDayDetail } = useAttendance();
+  const { monthLabel, weekDays, legend } = monthData;
+
   return (
     <section className="overflow-hidden rounded-xl border border-outline-variant bg-surface shadow-sm">
       <div className="flex items-center justify-between border-b border-outline-variant bg-surface-container-lowest p-4">
-        <h3 className="text-h3 font-semibold text-on-surface">October Calendar</h3>
+        <h3 className="text-h3 font-semibold text-on-surface">{monthLabel} Calendar</h3>
         <div className="flex gap-4 text-caption">
-          <div className="flex items-center gap-1">
-            <span className="h-3 w-3 rounded-full bg-primary-container" />
-            Present
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="h-3 w-3 rounded-full bg-tertiary-container" />
-            Late
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="h-3 w-3 rounded-full bg-error-container" />
-            Absent
-          </div>
+          {legend.map((item) => (
+            <div key={item.status} className="flex items-center gap-1">
+              <span className={`h-3 w-3 rounded-full ${item.colorClass}`} />
+              {item.label}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -124,7 +116,7 @@ export default function AttendanceCalendar() {
 
         <div className="grid grid-cols-7 gap-2">
           {calendarDays.map((day, index) => (
-            <DayCard key={index} day={day} />
+            <DayCard key={index} day={day} onSelect={openDayDetail} />
           ))}
         </div>
       </div>

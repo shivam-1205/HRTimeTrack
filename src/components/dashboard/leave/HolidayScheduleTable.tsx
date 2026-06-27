@@ -1,13 +1,12 @@
-import { HOLIDAYS_BY_YEAR } from "./holidays";
+"use client";
 
-type HolidayScheduleTableProps = {
-  year: number;
-};
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import { useHolidayCalendar } from "./context/HolidayCalendarContext";
+import { statusBadgeClass } from "./holidayCalendarUtils";
 
-export default function HolidayScheduleTable({ year }: HolidayScheduleTableProps) {
-  const holidays = HOLIDAYS_BY_YEAR[year] ?? [];
-  const highlightId =
-    year === 2024 ? "2024-11-28" : holidays[holidays.length - 2]?.id;
+export default function HolidayScheduleTable() {
+  const { year, holidays, nextHero, openHolidayDetail } = useHolidayCalendar();
+  const highlightId = nextHero?.holiday.id;
 
   return (
     <section className="overflow-hidden rounded-lg border border-outline-variant bg-surface shadow-sm">
@@ -20,33 +19,51 @@ export default function HolidayScheduleTable({ year }: HolidayScheduleTableProps
           <thead>
             <tr className="border-b border-outline-variant bg-surface-container-low">
               <th className="w-1/4 px-6 py-4 text-label-md text-on-surface-variant">Date</th>
-              <th className="w-1/3 px-6 py-4 text-label-md text-on-surface-variant">
-                Holiday Name
-              </th>
-              <th className="w-1/4 px-6 py-4 text-label-md text-on-surface-variant">
-                Day of Week
-              </th>
+              <th className="w-1/3 px-6 py-4 text-label-md text-on-surface-variant">Holiday Name</th>
+              <th className="w-1/4 px-6 py-4 text-label-md text-on-surface-variant">Day of Week</th>
               <th className="px-6 py-4 text-label-md text-on-surface-variant">Status</th>
+              <th className="px-6 py-4 text-right text-label-md text-on-surface-variant">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-outline-variant/50 text-body-md">
-            {holidays.map((holiday) => (
-              <tr
-                key={holiday.id}
-                className={`transition-colors hover:bg-surface-container-low/50 ${
-                  holiday.id === highlightId ? "bg-surface-container-low/20" : ""
-                }`}
-              >
-                <td className="px-6 py-4 text-on-surface">{holiday.date}</td>
-                <td className="px-6 py-4 font-medium text-on-surface">{holiday.name}</td>
-                <td className="px-6 py-4 text-on-surface-variant">{holiday.dayOfWeek}</td>
-                <td className="px-6 py-4">
-                  <span className="inline-flex items-center rounded bg-[#d1fae5] px-2 py-1 text-caption text-[#065f46]">
-                    {holiday.statusLabel}
-                  </span>
+            {holidays.length === 0 ? (
+              <tr>
+                <td colSpan={5} className="px-6 py-8 text-center text-on-surface-variant">
+                  No holidays listed for {year}.
                 </td>
               </tr>
-            ))}
+            ) : (
+              holidays.map((holiday) => (
+                <tr
+                  key={holiday.id}
+                  className={`cursor-pointer transition-colors hover:bg-surface-container-low/50 ${
+                    holiday.id === highlightId ? "bg-primary-container/10" : ""
+                  }`}
+                  onClick={() => openHolidayDetail(holiday)}
+                >
+                  <td className="px-6 py-4 text-on-surface">{holiday.date}</td>
+                  <td className="px-6 py-4 font-medium text-on-surface">{holiday.name}</td>
+                  <td className="px-6 py-4 text-on-surface-variant">{holiday.dayOfWeek}</td>
+                  <td className="px-6 py-4">
+                    <span
+                      className={`inline-flex items-center rounded px-2 py-1 text-caption ${statusBadgeClass(holiday.status)}`}
+                    >
+                      {holiday.statusLabel}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-right" onClick={(e) => e.stopPropagation()}>
+                    <button
+                      type="button"
+                      onClick={() => openHolidayDetail(holiday)}
+                      className="inline-flex items-center justify-center rounded-md border border-outline-variant/40 bg-surface p-1.5 text-on-surface-variant transition-colors hover:border-primary/30 hover:bg-primary-container/10 hover:text-primary"
+                      aria-label={`View ${holiday.name} details`}
+                    >
+                      <VisibilityOutlinedIcon sx={{ fontSize: 18, color: "currentColor" }} />
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

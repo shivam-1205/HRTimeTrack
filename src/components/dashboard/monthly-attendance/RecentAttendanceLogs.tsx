@@ -1,12 +1,21 @@
-import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import { CARD_SHADOW, RECENT_LOGS } from "./monthlyAttendanceData";
+"use client";
+
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import { CARD_SHADOW } from "./monthlyAttendanceTypes";
+import { useMonthlyAttendance } from "./context/MonthlyAttendanceContext";
 
 export default function RecentAttendanceLogs() {
+  const { recentLogs, openLogDetail, openRegularize, openAllLogs } = useMonthlyAttendance();
+
   return (
     <section className={`overflow-hidden rounded-xl bg-surface-container-lowest ${CARD_SHADOW}`}>
       <div className="flex items-center justify-between border-b border-outline-variant/20 bg-surface-bright p-6">
         <h3 className="text-h3 font-semibold text-on-surface">Recent Logs</h3>
-        <button type="button" className="text-label-md text-primary hover:underline">
+        <button
+          type="button"
+          onClick={openAllLogs}
+          className="text-label-md text-primary hover:underline"
+        >
           View All Logs
         </button>
       </div>
@@ -24,12 +33,13 @@ export default function RecentAttendanceLogs() {
             </tr>
           </thead>
           <tbody className="text-body-md">
-            {RECENT_LOGS.map((row) => (
+            {recentLogs.map((row) => (
               <tr
                 key={row.id}
-                className={`border-b border-outline-variant/10 transition-colors hover:bg-surface-container-low/50 ${
+                className={`cursor-pointer border-b border-outline-variant/10 transition-colors hover:bg-surface-container-low/50 ${
                   row.highlight ? "bg-error-container/10" : ""
                 }`}
+                onClick={() => openLogDetail(row)}
               >
                 <td className="p-4">
                   <div className="font-medium text-on-surface">{row.date}</div>
@@ -53,18 +63,20 @@ export default function RecentAttendanceLogs() {
                   {row.clockOut}
                 </td>
                 <td className="p-4 font-medium text-on-surface">{row.totalHrs}</td>
-                <td className="p-4 text-right">
+                <td className="p-4 text-right" onClick={(e) => e.stopPropagation()}>
                   {row.action === "menu" ? (
                     <button
                       type="button"
-                      className="p-1 text-outline transition-colors hover:text-primary"
-                      aria-label="More actions"
+                      onClick={() => openLogDetail(row)}
+                      className="inline-flex items-center justify-center rounded-md border border-outline-variant/40 bg-surface p-1.5 text-on-surface-variant transition-colors hover:border-primary/30 hover:bg-primary-container/10 hover:text-primary"
+                      aria-label="View log details"
                     >
-                      <MoreVertOutlinedIcon sx={{ fontSize: 18 }} />
+                      <VisibilityOutlinedIcon sx={{ fontSize: 18, color: "currentColor" }} />
                     </button>
                   ) : (
                     <button
                       type="button"
+                      onClick={() => openRegularize(row.id)}
                       className="rounded-md border border-error/30 px-2 py-1 text-caption text-error transition-colors hover:bg-error/10"
                     >
                       Fix

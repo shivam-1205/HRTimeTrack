@@ -1,0 +1,142 @@
+{
+  "success": true,
+  "message": "Extra working days fetched successfully",
+  "data": {
+    "meta": {
+      "employeeName": "Shivam Singh",
+      "employeeId": "EMP-1024",
+      "approvedBalance": 3,
+      "pendingBalance": 2,
+      "description": "Days you worked on weekends or public holidays. Only approved days count toward your balance."
+    },
+    "formOptions": {
+      "reasons": [
+        { "value": "holiday", "label": "Public Holiday" },
+        { "value": "weekend", "label": "Weekend (Sat/Sun)" },
+        { "value": "medical", "label": "Emergency / On-call" }
+      ],
+      "workTypes": ["Office", "Work From Home", "Client Site", "On-call Support"]
+    },
+    "records": [
+      {
+        "id": "ewd-1",
+        "date": "Apr 3, 2026 (Fri)",
+        "dateIso": "2026-04-03",
+        "dayLabel": "Friday",
+        "reason": "Public Holiday",
+        "reasonType": "holiday",
+        "note": "[auto] Detected from login on public holiday",
+        "status": "pending",
+        "clockIn": "10:15 AM",
+        "clockOut": "04:30 PM",
+        "totalHours": "6h 15m",
+        "workType": "Office",
+        "submittedAt": "Apr 3, 2026",
+        "reviewedBy": null,
+        "remarks": "Good Friday — production deployment support."
+      },
+      {
+        "id": "ewd-2",
+        "date": "Apr 4, 2026 (Sat)",
+        "dateIso": "2026-04-04",
+        "dayLabel": "Saturday",
+        "reason": "Weekend (Sat/Sun)",
+        "reasonType": "weekend",
+        "note": "[auto] Detected from login on Saturday",
+        "status": "pending",
+        "clockIn": "09:30 AM",
+        "clockOut": "02:00 PM",
+        "totalHours": "4h 30m",
+        "workType": "Work From Home",
+        "submittedAt": "Apr 4, 2026",
+        "reviewedBy": null,
+        "remarks": "Weekend sprint for HRMS dashboard release."
+      },
+      {
+        "id": "ewd-3",
+        "date": "Mar 8, 2026 (Sun)",
+        "dateIso": "2026-03-08",
+        "dayLabel": "Sunday",
+        "reason": "Weekend (Sat/Sun)",
+        "reasonType": "weekend",
+        "note": "Critical bug fix for attendance module",
+        "status": "approved",
+        "clockIn": "11:00 AM",
+        "clockOut": "03:45 PM",
+        "totalHours": "4h 45m",
+        "workType": "Office",
+        "submittedAt": "Mar 8, 2026",
+        "reviewedBy": "Priya Sharma",
+        "remarks": "Approved — counted toward comp-off balance."
+      },
+      {
+        "id": "ewd-4",
+        "date": "Feb 14, 2026 (Sat)",
+        "dateIso": "2026-02-14",
+        "dayLabel": "Saturday",
+        "reason": "Weekend (Sat/Sun)",
+        "reasonType": "weekend",
+        "note": "Client demo preparation",
+        "status": "approved",
+        "clockIn": "10:00 AM",
+        "clockOut": "06:00 PM",
+        "totalHours": "8h 00m",
+        "workType": "Client Site",
+        "submittedAt": "Feb 14, 2026",
+        "reviewedBy": "Priya Sharma",
+        "remarks": "Full day client visit — approved."
+      },
+      {
+        "id": "ewd-5",
+        "date": "Jan 26, 2026 (Mon)",
+        "dateIso": "2026-01-26",
+        "dayLabel": "Monday",
+        "reason": "Public Holiday",
+        "reasonType": "holiday",
+        "note": "Republic Day on-call rotation",
+        "status": "approved",
+        "clockIn": "08:00 AM",
+        "clockOut": "12:00 PM",
+        "totalHours": "4h 00m",
+        "workType": "On-call Support",
+        "submittedAt": "Jan 26, 2026",
+        "reviewedBy": "Amit Verma",
+        "remarks": "On-call duty — half day credited."
+      },
+      {
+        "id": "ewd-6",
+        "date": "Jan 18, 2026 (Sun)",
+        "dateIso": "2026-01-18",
+        "dayLabel": "Sunday",
+        "reason": "Weekend (Sat/Sun)",
+        "reasonType": "weekend",
+        "note": "Optional weekend work — insufficient justification",
+        "status": "rejected",
+        "clockIn": "02:00 PM",
+        "clockOut": "04:00 PM",
+        "totalHours": "2h 00m",
+        "workType": "Work From Home",
+        "submittedAt": "Jan 18, 2026",
+        "reviewedBy": "Priya Sharma",
+        "remarks": "Rejected — work could have been done on weekday."
+      },
+      {
+        "id": "ewd-7",
+        "date": "Dec 28, 2025 (Sun)",
+        "dateIso": "2025-12-28",
+        "dayLabel": "Sunday",
+        "reason": "Weekend (Sat/Sun)",
+        "reasonType": "weekend",
+        "note": "Year-end reporting — awaiting manager review",
+        "status": "on_hold",
+        "clockIn": "09:00 AM",
+        "clockOut": "01:30 PM",
+        "totalHours": "4h 30m",
+        "workType": "Office",
+        "submittedAt": "Dec 28, 2025",
+        "reviewedBy": null,
+        "remarks": "On hold pending finance sign-off."
+      }
+    ]
+  }
+}

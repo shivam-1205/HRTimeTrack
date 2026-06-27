@@ -1,0 +1,329 @@
+{
+  "success": true,
+  "message": "Leave management data fetched successfully",
+  "data": {
+    "meta": {
+      "employeeName": "Shivam Singh",
+      "employeeId": "EMP-1024",
+      "managerName": "Priya Sharma",
+      "hrEmail": "hr@hrmscorp.com"
+    },
+    "formOptions": {
+      "leaveTypes": [
+        { "value": "casual", "label": "Casual Leave", "tone": "casual" },
+        { "value": "medical", "label": "Medical Leave", "tone": "medical" },
+        { "value": "earned", "label": "Earned Leave", "tone": "casual" },
+        { "value": "half_day", "label": "Half Day", "tone": "casual" },
+        { "value": "wfh", "label": "Work From Home", "tone": "casual" }
+      ],
+      "recipients": [
+        { "value": "manager", "label": "Manager (Priya Sharma)" },
+        { "value": "hr", "label": "HR Department" },
+        { "value": "both", "label": "Manager & HR" }
+      ],
+      "months": [
+        { "value": "2026-06", "label": "June 2026" },
+        { "value": "2026-05", "label": "May 2026" },
+        { "value": "2026-04", "label": "April 2026" }
+      ],
+      "years": [2026, 2025, 2024]
+    },
+    "holidayMessages": [
+      {
+        "id": "hm-1",
+        "holidayName": "Eid al-Adha",
+        "holidayDate": "Jun 17, 2026",
+        "subject": "Leave request around Eid al-Adha",
+        "preview": "Hi Priya, I'd like to take Jun 18 as a compensatory day after working on the holiday deployment...",
+        "sentAt": "Jun 10, 2026 · 10:32 AM",
+        "from": "Shivam Singh",
+        "to": "Priya Sharma",
+        "body": "Hi Priya,\n\nI'd like to take June 18, 2026 as a compensatory leave day. I worked on Eid al-Adha (Jun 17) for the production release.\n\nPlease approve at your earliest convenience.\n\nThanks,\nShivam",
+        "relatedLeaveId": "leave-6"
+      },
+      {
+        "id": "hm-2",
+        "holidayName": "Republic Day",
+        "holidayDate": "Jan 26, 2026",
+        "subject": "Republic Day on-call — comp-off request",
+        "preview": "Following the on-call duty on Republic Day, requesting Jan 27 as compensatory off...",
+        "sentAt": "Jan 27, 2026 · 09:15 AM",
+        "from": "Shivam Singh",
+        "to": "HR Department",
+        "body": "Dear HR,\n\nI was on on-call support duty on Republic Day (Jan 26). As per policy, I'm requesting Jan 27 as a compensatory off.\n\nClock-in logs are attached in the extra working days module.\n\nRegards,\nShivam Singh",
+        "relatedLeaveId": "leave-4"
+      },
+      {
+        "id": "hm-3",
+        "holidayName": "Diwali",
+        "holidayDate": "Oct 20, 2026",
+        "subject": "Extended leave around Diwali",
+        "preview": "Planning to take Oct 21–22 as casual leave after the Diwali holiday for family travel...",
+        "sentAt": "Oct 5, 2026 · 04:20 PM",
+        "from": "Shivam Singh",
+        "to": "Priya Sharma",
+        "body": "Hi Priya,\n\nDiwali is on Oct 20 (Tuesday). I'd like to apply casual leave for Oct 21–22 to travel to my hometown.\n\nLet me know if this conflicts with the sprint schedule.\n\nThanks,\nShivam",
+        "relatedLeaveId": "leave-7"
+      }
+    ],
+    "leaveRequests": [
+      {
+        "id": "leave-1",
+        "type": "Medical",
+        "typeTone": "medical",
+        "typeValue": "medical",
+        "from": "May 29, 2026",
+        "to": "May 29, 2026",
+        "fromIso": "2026-05-29",
+        "toIso": "2026-05-29",
+        "days": 1,
+        "subject": "Doctor appointment — feeling unwell since morning",
+        "status": "approved",
+        "conflict": null,
+        "recipient": "manager",
+        "submittedAt": "May 28, 2026",
+        "reviewedBy": "Priya Sharma",
+        "reviewedAt": "May 28, 2026",
+        "messages": [
+          {
+            "id": "msg-1-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "Priya Sharma",
+            "subject": "Medical leave — May 29",
+            "body": "Hi Priya,\n\nI'm not feeling well since this morning and have a doctor's appointment tomorrow. Requesting medical leave for May 29.\n\nI'll share the medical certificate once available.\n\nThanks,\nShivam",
+            "sentAt": "May 28, 2026 · 08:45 AM"
+          },
+          {
+            "id": "msg-1-2",
+            "direction": "received",
+            "from": "Priya Sharma",
+            "to": "Shivam Singh",
+            "subject": "Re: Medical leave — May 29",
+            "body": "Approved. Take care and get well soon. Please submit the medical certificate when you return.",
+            "sentAt": "May 28, 2026 · 09:30 AM"
+          }
+        ]
+      },
+      {
+        "id": "leave-2",
+        "type": "Casual (½ PM)",
+        "typeTone": "casual",
+        "typeValue": "half_day",
+        "from": "May 25, 2026",
+        "to": "May 25, 2026",
+        "fromIso": "2026-05-25",
+        "toIso": "2026-05-25",
+        "days": 0.5,
+        "subject": "Personal errand — half day afternoon leave",
+        "status": "approved",
+        "conflict": null,
+        "recipient": "manager",
+        "submittedAt": "May 24, 2026",
+        "reviewedBy": "Priya Sharma",
+        "reviewedAt": "May 24, 2026",
+        "messages": [
+          {
+            "id": "msg-2-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "Priya Sharma",
+            "subject": "Half day leave — May 25 (PM)",
+            "body": "Hi Priya,\n\nI have a personal errand in the afternoon on May 25. Requesting half-day casual leave from 1:00 PM.\n\nI'll complete morning standup and urgent tasks before leaving.\n\nThanks,\nShivam",
+            "sentAt": "May 24, 2026 · 06:10 PM"
+          },
+          {
+            "id": "msg-2-2",
+            "direction": "received",
+            "from": "Priya Sharma",
+            "to": "Shivam Singh",
+            "subject": "Re: Half day leave — May 25 (PM)",
+            "body": "Approved for half day PM. Please update the team on Slack before you leave.",
+            "sentAt": "May 24, 2026 · 06:45 PM"
+          }
+        ]
+      },
+      {
+        "id": "leave-3",
+        "type": "Casual",
+        "typeTone": "casual",
+        "typeValue": "casual",
+        "from": "May 24, 2026",
+        "to": "May 25, 2026",
+        "fromIso": "2026-05-24",
+        "toIso": "2026-05-25",
+        "days": 2,
+        "subject": "Family function out of town",
+        "status": "approved",
+        "conflict": null,
+        "recipient": "manager",
+        "submittedAt": "May 20, 2026",
+        "reviewedBy": "Priya Sharma",
+        "reviewedAt": "May 21, 2026",
+        "messages": [
+          {
+            "id": "msg-3-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "Priya Sharma",
+            "subject": "Casual leave — May 24–25",
+            "body": "Hi Priya,\n\nI need to attend a family function out of town on May 24–25. Requesting 2 days casual leave.\n\nI've handed over my tasks to Rahul for coverage.\n\nThanks,\nShivam",
+            "sentAt": "May 20, 2026 · 11:00 AM"
+          },
+          {
+            "id": "msg-3-2",
+            "direction": "received",
+            "from": "Priya Sharma",
+            "to": "Shivam Singh",
+            "subject": "Re: Casual leave — May 24–25",
+            "body": "Approved. Enjoy the function!",
+            "sentAt": "May 21, 2026 · 10:15 AM"
+          }
+        ]
+      },
+      {
+        "id": "leave-4",
+        "type": "Comp-off",
+        "typeTone": "medical",
+        "typeValue": "earned",
+        "from": "Jan 27, 2026",
+        "to": "Jan 27, 2026",
+        "fromIso": "2026-01-27",
+        "toIso": "2026-01-27",
+        "days": 1,
+        "subject": "Compensatory off after Republic Day on-call",
+        "status": "approved",
+        "conflict": null,
+        "recipient": "hr",
+        "submittedAt": "Jan 27, 2026",
+        "reviewedBy": "Amit Verma (HR)",
+        "reviewedAt": "Jan 27, 2026",
+        "messages": [
+          {
+            "id": "msg-4-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "HR Department",
+            "subject": "Comp-off for Republic Day duty",
+            "body": "Dear HR,\n\nRequesting Jan 27 as compensatory off for on-call duty on Republic Day (Jan 26).\n\nExtra working day log submitted.\n\nRegards,\nShivam",
+            "sentAt": "Jan 27, 2026 · 09:15 AM"
+          },
+          {
+            "id": "msg-4-2",
+            "direction": "received",
+            "from": "Amit Verma (HR)",
+            "to": "Shivam Singh",
+            "subject": "Re: Comp-off for Republic Day duty",
+            "body": "Approved. Comp-off credited to your earned leave balance.",
+            "sentAt": "Jan 27, 2026 · 11:00 AM"
+          }
+        ]
+      },
+      {
+        "id": "leave-5",
+        "type": "Casual",
+        "typeTone": "casual",
+        "typeValue": "casual",
+        "from": "Jun 30, 2026",
+        "to": "Jul 1, 2026",
+        "fromIso": "2026-06-30",
+        "toIso": "2026-07-01",
+        "days": 2,
+        "subject": "Personal travel — pending approval",
+        "status": "pending",
+        "conflict": "Sprint demo on Jul 1",
+        "recipient": "manager",
+        "submittedAt": "Jun 25, 2026",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "messages": [
+          {
+            "id": "msg-5-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "Priya Sharma",
+            "subject": "Casual leave — Jun 30 – Jul 1",
+            "body": "Hi Priya,\n\nI need to travel for a personal matter on Jun 30 – Jul 1. Requesting 2 days casual leave.\n\nI can join the Jul 1 demo remotely if needed.\n\nThanks,\nShivam",
+            "sentAt": "Jun 25, 2026 · 02:30 PM"
+          }
+        ]
+      },
+      {
+        "id": "leave-6",
+        "type": "Comp-off",
+        "typeTone": "casual",
+        "typeValue": "earned",
+        "from": "Jun 18, 2026",
+        "to": "Jun 18, 2026",
+        "fromIso": "2026-06-18",
+        "toIso": "2026-06-18",
+        "days": 1,
+        "subject": "Comp-off after Eid al-Adha deployment",
+        "status": "on_hold",
+        "conflict": null,
+        "recipient": "manager",
+        "submittedAt": "Jun 10, 2026",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "messages": [
+          {
+            "id": "msg-6-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "Priya Sharma",
+            "subject": "Comp-off after Eid al-Adha work",
+            "body": "Hi Priya,\n\nI worked on Eid al-Adha (Jun 17) for the production release. Requesting Jun 18 as compensatory off.\n\nDeployment completed successfully.\n\nThanks,\nShivam",
+            "sentAt": "Jun 10, 2026 · 10:32 AM"
+          },
+          {
+            "id": "msg-6-2",
+            "direction": "received",
+            "from": "Priya Sharma",
+            "to": "Shivam Singh",
+            "subject": "Re: Comp-off after Eid al-Adha work",
+            "body": "On hold — please confirm extra working day log is approved in the system first.",
+            "sentAt": "Jun 11, 2026 · 03:00 PM"
+          }
+        ]
+      },
+      {
+        "id": "leave-7",
+        "type": "Casual",
+        "typeTone": "casual",
+        "typeValue": "casual",
+        "from": "Oct 21, 2026",
+        "to": "Oct 22, 2026",
+        "fromIso": "2026-10-21",
+        "toIso": "2026-10-22",
+        "days": 2,
+        "subject": "Post-Diwali travel — rejected due to release",
+        "status": "rejected",
+        "conflict": "Q4 release freeze",
+        "recipient": "manager",
+        "submittedAt": "Oct 5, 2026",
+        "reviewedBy": "Priya Sharma",
+        "reviewedAt": "Oct 6, 2026",
+        "messages": [
+          {
+            "id": "msg-7-1",
+            "direction": "sent",
+            "from": "Shivam Singh",
+            "to": "Priya Sharma",
+            "subject": "Leave after Diwali — Oct 21–22",
+            "body": "Hi Priya,\n\nPlanning casual leave Oct 21–22 after Diwali for family travel.\n\nPlease advise.\n\nThanks,\nShivam",
+            "sentAt": "Oct 5, 2026 · 04:20 PM"
+          },
+          {
+            "id": "msg-7-2",
+            "direction": "received",
+            "from": "Priya Sharma",
+            "to": "Shivam Singh",
+            "subject": "Re: Leave after Diwali — Oct 21–22",
+            "body": "Rejected due to Q4 release freeze. Please reschedule after Nov 15 or discuss alternate dates.",
+            "sentAt": "Oct 6, 2026 · 09:00 AM"
+          }
+        ]
+      }
+    ]
+  }
+}

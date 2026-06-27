@@ -34,7 +34,7 @@ export default function NotificationsView() {
         action={
           <button
             type="button"
-            className="rounded-lg border border-outline-variant px-4 py-2 text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low"
+            className="rounded-xl border border-outline-variant px-4 py-2 text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low"
           >
             Mark all as read
           </button>

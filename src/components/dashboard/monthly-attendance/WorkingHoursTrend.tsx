@@ -2,11 +2,19 @@
 
 import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
-import { useState } from "react";
-import { CARD_SHADOW, CHART_BARS } from "./monthlyAttendanceData";
+import { CARD_SHADOW } from "./monthlyAttendanceTypes";
+import { barClassName } from "./monthlyAttendanceUtils";
+import { useMonthlyAttendance } from "./context/MonthlyAttendanceContext";
 
 export default function WorkingHoursTrend() {
-  const [period, setPeriod] = useState<"week" | "month">("month");
+  const {
+    chartPeriod,
+    chartBars,
+    chartRangeLabel,
+    scores,
+    setChartPeriod,
+    openLogDetailById,
+  } = useMonthlyAttendance();
 
   return (
     <section className={`rounded-xl bg-surface-container-lowest p-6 ${CARD_SHADOW}`}>
@@ -15,9 +23,9 @@ export default function WorkingHoursTrend() {
         <div className="flex gap-2">
           <button
             type="button"
-            onClick={() => setPeriod("week")}
+            onClick={() => setChartPeriod("week")}
             className={`rounded-md px-2 py-1 text-caption font-medium ${
-              period === "week"
+              chartPeriod === "week"
                 ? "bg-primary text-on-primary shadow-sm"
                 : "bg-surface-container text-on-surface-variant"
             }`}
@@ -26,9 +34,9 @@ export default function WorkingHoursTrend() {
           </button>
           <button
             type="button"
-            onClick={() => setPeriod("month")}
+            onClick={() => setChartPeriod("month")}
             className={`rounded-md px-2 py-1 text-caption font-medium ${
-              period === "month"
+              chartPeriod === "month"
                 ? "bg-primary text-on-primary shadow-sm"
                 : "bg-surface-container text-on-surface-variant"
             }`}
@@ -41,16 +49,21 @@ export default function WorkingHoursTrend() {
       <div className="flex flex-col gap-6 md:flex-row">
         <div className="group relative flex h-64 flex-grow items-center justify-center overflow-hidden rounded-lg border border-outline-variant/30 bg-surface-container-low">
           <div className="flex h-full w-full items-end justify-around gap-2 p-4">
-            {CHART_BARS.map((bar, index) => (
-              <div
-                key={index}
-                className={`w-1/12 rounded-t-sm transition-colors ${bar.className}`}
-                style={{ height: bar.height }}
+            {chartBars.map((bar) => (
+              <button
+                key={bar.id}
+                type="button"
+                disabled={!bar.logId}
+                onClick={() => openLogDetailById(bar.logId)}
+                title={bar.logId ? `${bar.label}: ${bar.hours}h — click for details` : bar.label}
+                className={`w-1/12 rounded-t-sm transition-colors ${barClassName(bar)}`}
+                style={{ height: `${bar.heightPercent}%` }}
+                aria-label={bar.logId ? `View ${bar.label} attendance` : bar.label}
               />
             ))}
           </div>
           <span className="absolute bottom-2 left-2 rounded-md bg-surface-container-lowest px-2 py-1 text-caption text-on-surface-variant shadow-sm">
-            {period === "month" ? "Jun 1 - Jun 30" : "Jun 8 - Jun 14"}
+            {chartRangeLabel}
           </span>
         </div>
 
@@ -61,11 +74,14 @@ export default function WorkingHoursTrend() {
               <StarOutlinedIcon className="text-amber-500" sx={{ fontSize: 18 }} />
             </div>
             <div className="flex items-end gap-1">
-              <span className="text-h1 font-semibold text-primary">9.4</span>
-              <span className="mb-1 text-body-md text-on-surface-variant">/10</span>
+              <span className="text-h1 font-semibold text-primary">{scores.attendanceScore}</span>
+              <span className="mb-1 text-body-md text-on-surface-variant">/{scores.attendanceMax}</span>
             </div>
             <div className="mt-2 h-1.5 w-full rounded-full bg-outline-variant/30">
-              <div className="h-1.5 w-[94%] rounded-full bg-primary" />
+              <div
+                className="h-1.5 rounded-full bg-primary"
+                style={{ width: `${scores.attendancePercent}%` }}
+              />
             </div>
           </div>
 
@@ -74,8 +90,8 @@ export default function WorkingHoursTrend() {
               <span className="text-body-md font-medium text-on-surface">Consistency</span>
               <BoltOutlinedIcon className="text-emerald-500" sx={{ fontSize: 18 }} />
             </div>
-            <span className="text-h1 font-semibold text-emerald-600">High</span>
-            <p className="mt-2 text-caption text-on-surface-variant">Top 15% in department</p>
+            <span className="text-h1 font-semibold text-emerald-600">{scores.consistency}</span>
+            <p className="mt-2 text-caption text-on-surface-variant">{scores.consistencyNote}</p>
           </div>
         </div>
       </div>
