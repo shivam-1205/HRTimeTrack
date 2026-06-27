@@ -10,14 +10,14 @@ export default function FeatureCard({
   description,
 }: Props) {
   return (
-    <div className="bg-white rounded-3xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition">
-      <div className="w-12 h-12 rounded-xl bg-indigo-100 mb-6" />
+    <div className="bg-surface-container-lowest rounded-3xl border border-outline shadow-sm p-6 hover:shadow-md transition-shadow">
+      <div className="w-12 h-12 rounded-xl bg-surface-container-low mb-6" />
 
-      <h3 className="text-2xl font-semibold mb-3">
+      <h3 className="text-2xl font-semibold text-on-surface mb-3">
         {title}
       </h3>
 
-      <p className="text-slate-600">
+      <p className="text-on-surface-variant">
         {description}
       </p>
     </div>

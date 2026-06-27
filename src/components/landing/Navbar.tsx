@@ -37,9 +37,9 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="#features"
+            href="/features"
             className={`py-4 transition-colors ${
-              isActive("#features")
+              isActive("/features")
                 ? "text-[#4F46E5] font-bold border-b-2 border-[#4F46E5]"
                 : "text-on-surface-variant hover:text-[#4F46E5]"
             }`}

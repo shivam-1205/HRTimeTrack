@@ -62,28 +62,28 @@ export default function AboutUs() {
   ];
 
   return (
-    <div className="bg-[#f9f9ff] text-[#151c27] min-h-screen flex flex-col ">
+    <div className="bg-surface text-on-surface min-h-screen flex flex-col ">
       {/* Main Content */}
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative flex items-center justify-center overflow-hidden bg-[#f0f3ff] px-[24px] py-[48px] lg:py-[80px]">
+        <section className="relative flex items-center justify-center overflow-hidden bg-surface-container-low px-[24px] py-[48px] lg:py-[80px]">
           {/* Decorative Gradient Blobs */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[#4f46e5]/20 blur-[100px]"></div>
-            <div className="absolute bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-[#6063ee]/20 blur-[80px]"></div>
+            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[100px]"></div>
+            <div className="absolute bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-secondary/20 blur-[80px]"></div>
           </div>
 
           <div className="relative z-10 max-w-full mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center">
             <div className="flex flex-col gap-[16px]">
-              <span className="text-[13px] leading-[18px] font-medium text-[#3525cd] tracking-wider uppercase">
+              <span className="text-[13px] leading-[18px] font-medium text-primary tracking-wider uppercase">
                 Our Mission
               </span>
-              <h1 className="font-bold text-[48px] leading-[1.1] tracking-[-0.02em] text-[#151c27] mb-4">
+              <h1 className="font-bold text-[48px] leading-[1.1] tracking-[-0.02em] text-on-surface mb-4">
                 Redefining Work,
                 <br />
                 Empowering People.
               </h1>
-              <p className="text-[16px] leading-[24px] font-normal text-[#464555] mb-4 max-w-lg">
+              <p className="text-[16px] leading-[24px] font-normal text-on-surface-variant mb-4 max-w-lg">
                 We build enterprise HRMS solutions that bridge the gap between
                 high-performance systems and human-centric design. Calm
                 productivity is at the core of everything we do.
@@ -95,7 +95,7 @@ export default function AboutUs() {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="rounded-xl overflow-hidden shadow-lg bg-white/70 backdrop-blur-sm border border-white/50">
+              <div className="rounded-xl overflow-hidden shadow-lg bg-surface-container-lowest/70 backdrop-blur-sm border border-outline/50">
                 <img
                   alt="Team collaboration"
                   className="object-cover overflow-hidden rounded-xl shadow-lg"
@@ -107,20 +107,20 @@ export default function AboutUs() {
         </section>
 
         {/* Our Story Timeline */}
-        <section className="bg-[#f9f9ff] py-[48px] px-[24px] relative">
+        <section className="bg-surface py-[48px] px-[24px] relative">
           <div className="max-w-[1440px] mx-auto">
             <div className="text-center mb-[32px]">
-              <h1 className="font-bold text-[30px] leading-[36px] text-[#151c27] mb-[8px]">
+              <h1 className="font-bold text-[30px] leading-[36px] text-on-surface mb-[8px]">
                 Our Story
               </h1>
-              <p className="text-[14px] leading-[20px] font-normal text-[#464555] max-w-2xl mx-auto">
+              <p className="text-[14px] leading-[20px] font-normal text-on-surface-variant max-w-2xl mx-auto">
                 The journey of simplifying enterprise complexity.
               </p>
             </div>
             
             <div className="relative max-w-4xl mx-auto">
               {/* Timeline Line */}
-              <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#3525cd]/20"></div>
+              <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-[2px] bg-primary/20"></div>
               
               {timelineData.map((item, index) => (
                 <div
@@ -130,18 +130,18 @@ export default function AboutUs() {
                   }`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-[8px] md:left-1/2 top-6 w-4 h-4 rounded-full bg-[#3525cd] border-4 border-white shadow-md transform -translate-x-1/2 z-10"></div>
+                  <div className="absolute left-[8px] md:left-1/2 top-6 w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest shadow-md transform -translate-x-1/2 z-10"></div>
                   
                   {/* Content */}
                   <div className="ml-[40px] md:ml-0 w-full md:w-1/2 md:px-[48px]">
-                    <div className="bg-white/70 backdrop-blur-md p-[24px] rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                      <span className="text-[#3525cd] font-semibold text-[13px] leading-[18px] mb-2 block">
+                    <div className="bg-surface-container-lowest backdrop-blur-md p-[24px] rounded-xl shadow-sm border border-outline hover:shadow-md transition-shadow">
+                      <span className="text-primary font-semibold text-[13px] leading-[18px] mb-2 block">
                         {item.year}
                       </span>
-                      <h3 className="text-[20px] leading-[28px] font-bold text-[#151c27] mb-3">
+                      <h3 className="text-[20px] leading-[28px] font-bold text-on-surface mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-[14px] leading-[20px] text-[#464555]">
+                      <p className="text-[14px] leading-[20px] text-on-surface-variant">
                         {item.description}
                       </p>
                     </div>
@@ -156,13 +156,13 @@ export default function AboutUs() {
         </section>
 
         {/* Leadership Team */}
-        <section className="py-[48px] px-[24px] bg-white">
+        <section className="py-[48px] px-[24px] bg-surface-container-lowest">
           <div className="max-w-[1440px] mx-auto">
             <div className="mb-[32px]">
-              <h2 className="font-bold text-[30px] leading-[36px] text-[#151c27] mb-[8px]">
+              <h2 className="font-bold text-[30px] leading-[36px] text-on-surface mb-[8px]">
                 Leadership Team
               </h2>
-              <p className="text-[14px] leading-[20px] font-normal text-[#464555] max-w-xl mb-4">
+              <p className="text-[14px] leading-[20px] font-normal text-on-surface-variant max-w-xl mb-4">
                 Guided by experienced professionals dedicated to transforming
                 the modern workplace.
               </p>
@@ -172,24 +172,24 @@ export default function AboutUs() {
               {teamMembers.map((member) => (
                 <div
                   key={member.id}
-                  className="relative flex flex-col items-center bg-[#f0f3ff] rounded-xl p-6 border border-gray-200 hover:shadow-md transition-all duration-300 group"
+                  className="relative flex flex-col items-center bg-surface-container-lowest rounded-xl p-6 border border-outline hover:shadow-md transition-all duration-300 group"
                 >
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white shadow-sm">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-surface-container-lowest shadow-sm">
                     <img
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <h3 className="text-[20px] leading-[28px] font-bold text-[#151c27] text-center">
+                  <h3 className="text-[20px] leading-[28px] font-bold text-on-surface text-center">
                     {member.name}
                   </h3>
-                  <span className="text-[#3525cd] font-medium text-[13px] leading-[18px] mb-4 text-center">
+                  <span className="text-primary font-medium text-[13px] leading-[18px] mb-4 text-center">
                     {member.role}
                   </span>
-                  <div className="flex gap-3 mt-auto text-gray-400">
-                    <EmailOutlinedIcon className="hover:text-[#3525cd] cursor-pointer text-[20px] transition-colors" />
-                    <LinkOutlinedIcon className="hover:text-[#3525cd] cursor-pointer text-[20px] transition-colors" />
+                  <div className="flex gap-3 mt-auto text-outline">
+                    <EmailOutlinedIcon className="hover:text-primary cursor-pointer text-[20px] transition-colors" />
+                    <LinkOutlinedIcon className="hover:text-primary cursor-pointer text-[20px] transition-colors" />
                   </div>
                 </div>
               ))}
@@ -198,32 +198,27 @@ export default function AboutUs() {
         </section>
 
         {/* Global Presence / CTA */}
-        <section className="py-[48px] px-[24px] bg-[#e2e8f8] relative overflow-hidden">
+        <section className="py-[48px] px-[24px] bg-surface-container-high relative overflow-hidden">
           {/* Pattern Background */}
           <div 
             className="absolute inset-0 opacity-5"
             style={{
-              backgroundImage: `radial-gradient(circle, #3525cd 1px, transparent 1px)`,
+              backgroundImage: `radial-gradient(circle, var(--primary) 1px, transparent 1px)`,
               backgroundSize: '20px 20px'
             }}
           ></div>
           
-          <div className="absolute inset-0 bg-[#3525cd]/5 z-0"></div>
+          <div className="absolute inset-0 bg-primary/5 z-0"></div>
 
           <div className="relative z-10 max-w-[1440px] mx-auto flex flex-col lg:flex-row items-stretch gap-8 xl:gap-12">
             {/* LEFT BOX */}
             <div 
-              className="w-full lg:w-1/2 p-10 md:p-14 lg:p-10 rounded-2xl border border-[#c7c4d8]/30 shadow-md"
-              style={{
-                background: 'rgba(255, 255, 255, 0.7)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-              }}
+              className="w-full lg:w-1/2 p-10 md:p-14 lg:p-10 rounded-2xl border border-outline/30 shadow-md bg-surface-container-lowest/70 backdrop-blur-md"
             >
-              <h2 className="font-bold text-[30px] leading-[36px] text-[#151c27] mb-4">
+              <h2 className="font-bold text-[30px] leading-[36px] text-on-surface mb-4">
                 Global Presence, Local Focus
               </h2>
-              <p className="text-[14px] leading-[20px] font-normal text-[#464555] mb-6">
+              <p className="text-[14px] leading-[20px] font-normal text-on-surface-variant mb-6">
                 Our platform is trusted by enterprises across the globe. We
                 maintain a robust infrastructure designed to comply with
                 international data regulations while providing a localized,
@@ -231,36 +226,36 @@ export default function AboutUs() {
               </p>
               <div className="grid grid-cols-2 gap-5 mb-8">
                 <div>
-                  <span className="block text-[42px] font-bold text-[#3525cd] mb-2">
+                  <span className="block text-[42px] font-bold text-primary mb-2">
                     500+
                   </span>
-                  <span className="text-[12px] leading-[16px] tracking-[0.01em] font-medium text-[#464555] uppercase tracking-wide">
+                  <span className="text-[12px] leading-[16px] tracking-[0.01em] font-medium text-on-surface-variant uppercase tracking-wide">
                     Enterprise Clients
                   </span>
                 </div>
                 <div>
-                  <span className="block text-[42px] font-bold text-[#3525cd] mb-2">
+                  <span className="block text-[42px] font-bold text-primary mb-2">
                     40+
                   </span>
-                  <span className="text-[12px] leading-[16px] tracking-[0.01em] font-medium text-[#464555] uppercase tracking-wide">
+                  <span className="text-[12px] leading-[16px] tracking-[0.01em] font-medium text-on-surface-variant uppercase tracking-wide">
                     Countries Served
                   </span>
                 </div>
               </div>
-              <button className="mt-2 py-3 px-7 bg-[#3525cd] hover:bg-[#3525cd]/90 text-white rounded-xl text-[13px] leading-[18px] font-medium shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+              <button className="mt-2 py-3 px-7 bg-primary hover:bg-primary-container text-on-primary rounded-xl text-[13px] leading-[18px] font-medium shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2">
                 View Open Positions
                 <ArrowForwardOutlinedIcon className="text-[18px]" />
               </button>
             </div>
 
             {/* RIGHT BOX */}
-            <div className="w-full lg:w-1/2 min-h-[350px] md:min-h-[450px] rounded-2xl overflow-hidden shadow-sm border border-[#c7c4d8]/20 relative bg-white flex items-center justify-center">
-              <PublicOutlinedIcon className="text-[120px] text-[#c7c4d8]/20 absolute" />
+            <div className="w-full lg:w-1/2 min-h-[350px] md:min-h-[450px] rounded-2xl overflow-hidden shadow-sm border border-outline/20 relative bg-surface-container-lowest flex items-center justify-center">
+              <PublicOutlinedIcon className="text-[120px] text-outline/20 absolute" />
               <div className="text-center z-10 px-4">
-                <span className="text-[20px] leading-[28px] tracking-[-0.01em] font-bold text-[#464555] block mb-2">
+                <span className="text-[20px] leading-[28px] tracking-[-0.01em] font-bold text-on-surface-variant block mb-2">
                   Operating Worldwide
                 </span>
-                <span className="text-[14px] leading-[20px] font-normal text-[#777587]">
+                <span className="text-[14px] leading-[20px] font-normal text-on-surface-variant">
                   Interactive map visualization would render here
                 </span>
               </div>
