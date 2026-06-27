@@ -1,0 +1,84 @@
+/* Landing theme — loaded only from app/(marketing)/layout.tsx */
+
+.landing-theme {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --primary: #4f46e5;
+  --on-primary: #ffffff;
+  --primary-container: #4338ca;
+  --secondary: #6366f1;
+  --tertiary: #a54100;
+
+  --surface: #f9f9ff;
+  --surface-container-low: #f0f3ff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #e7eefe;
+  --surface-variant: #dce2f3;
+
+  --on-background: #151c27;
+  --on-surface: #151c27;
+  --on-surface-variant: #464555;
+
+  --outline: #c7c4d8;
+  --outline-variant: #c7c4d8;
+
+  --error: #ba1a1a;
+
+  --theme-text-h1: 1.875rem;
+  --theme-text-h1-lh: 2.25rem;
+  --theme-text-h1-tracking: -0.01em;
+  --theme-text-h1-weight: 600;
+
+  --theme-text-h2: 1.5rem;
+  --theme-text-h2-lh: 2rem;
+  --theme-text-h2-tracking: -0.01em;
+  --theme-text-h2-weight: 600;
+
+  --theme-text-h3: 1.25rem;
+  --theme-text-h3-lh: 1.75rem;
+  --theme-text-h3-tracking: -0.01em;
+  --theme-text-h3-weight: 600;
+
+  --theme-text-body-lg: 1rem;
+  --theme-text-body-lg-lh: 1.5rem;
+  --theme-text-body-lg-weight: 400;
+
+  --theme-text-body-md: 0.875rem;
+  --theme-text-body-md-lh: 1.25rem;
+  --theme-text-body-md-weight: 400;
+
+  --theme-text-label-md: 0.8125rem;
+  --theme-text-label-md-lh: 1.125rem;
+  --theme-text-label-md-weight: 500;
+
+  --theme-text-caption: 0.75rem;
+  --theme-text-caption-lh: 1rem;
+  --theme-text-caption-tracking: 0.01em;
+  --theme-text-caption-weight: 500;
+
+  --theme-spacing-xs: 0.25rem;
+  --theme-spacing-sm: 0.5rem;
+  --theme-spacing-md: 1rem;
+  --theme-spacing-lg: 1.5rem;
+  --theme-spacing-xl: 2rem;
+  --theme-spacing-2xl: 3rem;
+
+  color: var(--on-background);
+  background-color: var(--background);
+}
+
+@utility font-label-md {
+  font-size: var(--theme-text-label-md, 0.8125rem);
+  line-height: var(--theme-text-label-md-lh, 1.125rem);
+  font-weight: var(--theme-text-label-md-weight, 500);
+}
+
+@utility font-h3 {
+  font-size: var(--theme-text-h3, 1.25rem);
+  line-height: var(--theme-text-h3-lh, 1.75rem);
+  font-weight: var(--theme-text-h3-weight, 600);
+  letter-spacing: var(--theme-text-h3-tracking, -0.01em);
+}

@@ -12,5 +12,9 @@ export default function DashboardRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <DashboardShell>{children}</DashboardShell>;
+  return (
+    <div className="dashboard-theme min-h-screen w-full">
+      <DashboardShell>{children}</DashboardShell>
+    </div>
+  );
 }

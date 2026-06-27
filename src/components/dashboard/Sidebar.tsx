@@ -230,7 +230,7 @@ function SidebarContent({
 }
 
 const sidebarBaseClass =
-  "dashboard-theme dashboard-sidebar dashboard-sidebar-compact fixed top-0 bottom-0 left-0 z-50 flex flex-col border-r border-white/10 shadow-md transition-[width] duration-300 ease-in-out";
+  "dashboard-sidebar dashboard-sidebar-compact fixed top-0 bottom-0 left-0 z-50 flex flex-col border-r border-white/10 shadow-md transition-[width] duration-300 ease-in-out";
 
 export default function Sidebar() {
   const { collapsed, toggle, mobileOpen, closeMobile } = useSidebar();

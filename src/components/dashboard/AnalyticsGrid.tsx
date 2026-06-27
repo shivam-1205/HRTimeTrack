@@ -1,62 +1,74 @@
+"use client";
+
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import CoffeeOutlinedIcon from "@mui/icons-material/CoffeeOutlined";
 import DonutLargeOutlinedIcon from "@mui/icons-material/DonutLargeOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import ScheduleOutlinedIcon from "@mui/icons-material/ScheduleOutlined";
+import type { SvgIconComponent } from "@mui/icons-material";
+import { useMemo } from "react";
+import { AnalyticsDonut, AnalyticsProgress } from "./AnalyticsChart";
+import { useDashboardTracker } from "./context/DashboardTrackerContext";
+import { DASHBOARD_DATA } from "./data/dashboardTypes";
 import DashboardCard from "./DashboardCard";
 
-const stats = [
-  {
-    icon: ScheduleOutlinedIcon,
-    label: "Total Worked",
-    value: "38.5 hrs",
-    sub: "This Week",
-    progress: 85,
-    progressColor: "bg-primary",
-    subColor: "text-outline",
-  },
-  {
-    icon: CoffeeOutlinedIcon,
-    label: "Break Time",
-    value: "45 mins",
-    sub: "Today",
-    progress: 45,
-    progressColor: "bg-amber-500",
-    subColor: "text-outline",
-  },
-  {
-    icon: DonutLargeOutlinedIcon,
-    label: "Attendance",
-    value: "98%",
-    sub: "Monthly",
-    progress: null,
-    progressColor: "",
-    subColor: "text-outline",
-    trend: "2%",
-    showDonut: true,
-  },
-  {
-    icon: LoginOutlinedIcon,
-    label: "Avg Login",
-    value: "08:55 AM",
-    sub: "On Time",
-    progress: null,
-    progressColor: "",
-    subColor: "text-emerald-600",
-  },
-];
+const iconMap: Record<string, SvgIconComponent> = {
+  schedule: ScheduleOutlinedIcon,
+  coffee: CoffeeOutlinedIcon,
+  donut: DonutLargeOutlinedIcon,
+  login: LoginOutlinedIcon,
+};
 
 export default function AnalyticsGrid() {
+  const { elapsedSeconds, breakSeconds } = useDashboardTracker();
+  const { analyticsMeta } = DASHBOARD_DATA;
+
+  const stats = useMemo(() => {
+    const todayHours = elapsedSeconds / 3600;
+    const totalWorkedHours = analyticsMeta.weeklyWorkedHours + todayHours;
+    const workedProgress = (totalWorkedHours / analyticsMeta.weeklyTargetHours) * 100;
+
+    const breakMins = analyticsMeta.baseBreakMinutes + Math.floor(breakSeconds / 60);
+    const breakProgress = (breakMins / analyticsMeta.maxBreakMinutes) * 100;
+
+    return DASHBOARD_DATA.analytics.map((stat) => {
+      if (stat.id === "total-worked") {
+        return {
+          ...stat,
+          value: `${totalWorkedHours.toFixed(1)} hrs`,
+          progress: workedProgress,
+        };
+      }
+      if (stat.id === "break-time") {
+        return {
+          ...stat,
+          value: `${breakMins} mins`,
+          progress: breakProgress,
+        };
+      }
+      if (stat.id === "attendance") {
+        return {
+          ...stat,
+          value: `${analyticsMeta.attendancePercent}%`,
+          donutPercent: analyticsMeta.attendancePercent,
+        };
+      }
+      return stat;
+    });
+  }, [elapsedSeconds, breakSeconds, analyticsMeta]);
+
   return (
-    <div className="col-span-1 grid grid-cols-2 gap-4 md:col-span-3 lg:col-span-2">
+    <div className="grid grid-cols-2 gap-4 lg:col-span-2">
       {stats.map((stat) => {
-        const Icon = stat.icon;
+        const Icon = iconMap[stat.icon];
+        const donutPercent = "donutPercent" in stat ? stat.donutPercent : undefined;
+
         return (
-          <DashboardCard key={stat.label} className="flex flex-col p-4">
+          <DashboardCard key={stat.id} className="flex min-h-[188px] flex-col p-4">
             <div className="mb-2 flex items-center justify-between text-on-surface-variant">
               <div className="flex items-center gap-2">
                 <Icon sx={{ fontSize: 20 }} className="text-on-surface-variant" />
-                <h4 className="text-label-md font-medium">{stat.label}</h4>
+                <h4 className="text-label-md font-medium text-on-surface">{stat.label}</h4>
               </div>
               {stat.trend && (
                 <span className="flex items-center text-caption font-medium text-emerald-600">
@@ -71,20 +83,13 @@ export default function AnalyticsGrid() {
                 <p className="text-h2 font-semibold text-on-surface">{stat.value}</p>
                 <p className={`text-caption ${stat.subColor}`}>{stat.sub}</p>
               </div>
-              {stat.showDonut && (
-                <div className="relative h-12 w-12 rounded-full border-4 border-surface-container">
-                  <div className="absolute inset-0 rotate-45 transform rounded-full border-4 border-primary border-b-transparent border-r-transparent" />
-                </div>
+              {stat.showDonut && typeof donutPercent === "number" && (
+                <AnalyticsDonut percent={donutPercent} />
               )}
             </div>
 
             {stat.progress !== null && (
-              <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-surface-container">
-                <div
-                  className={`h-full rounded-full ${stat.progressColor}`}
-                  style={{ width: `${stat.progress}%` }}
-                />
-              </div>
+              <AnalyticsProgress percent={stat.progress} colorClass={stat.progressColor} />
             )}
           </DashboardCard>
         );

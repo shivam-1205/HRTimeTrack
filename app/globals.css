@@ -1,102 +1,80 @@
 @import "tailwindcss";
 
 /*
- * Shared Tailwind token wiring only.
- * Color values are provided by .landing-theme (landing.css) or
- * .dashboard-theme (dashboard.css) — never mix dashboard tokens here.
+ * Shared Tailwind utility wiring — no color values here.
+ * Landing:  .landing-theme  → landing-globals.css
+ * Dashboard: .dashboard-theme → dashboard.css
  */
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--background, #ffffff);
+  --color-foreground: var(--foreground, #171717);
 
-  --color-primary: var(--primary);
-  --color-on-primary: var(--on-primary);
-  --color-primary-container: var(--primary-container, var(--primary));
-  --color-secondary: var(--secondary);
-  --color-tertiary: var(--tertiary);
+  --color-primary: var(--primary, #4f46e5);
+  --color-on-primary: var(--on-primary, #ffffff);
+  --color-primary-container: var(--primary-container, #4338ca);
+  --color-secondary: var(--secondary, #6366f1);
+  --color-tertiary: var(--tertiary, #a54100);
 
-  --color-surface: var(--surface);
-  --color-surface-container-low: var(--surface-container-low);
-  --color-surface-container-lowest: var(--surface-container-lowest);
-  --color-surface-container-high: var(--surface-container-high);
-  --color-surface-variant: var(--surface-variant);
+  --color-surface: var(--surface, #f9f9ff);
+  --color-surface-container-low: var(--surface-container-low, #f0f3ff);
+  --color-surface-container-lowest: var(--surface-container-lowest, #ffffff);
+  --color-surface-container-high: var(--surface-container-high, #e7eefe);
+  --color-surface-variant: var(--surface-variant, #dce2f3);
 
-  --color-outline: var(--outline);
-  --color-outline-variant: var(--outline-variant, var(--outline));
+  --color-outline: var(--outline, #c7c4d8);
+  --color-outline-variant: var(--outline-variant, #c7c4d8);
 
-  --color-on-background: var(--on-background, var(--on-surface));
-  --color-on-surface: var(--on-surface);
-  --color-on-surface-variant: var(--on-surface-variant);
+  --color-on-background: var(--on-background, #151c27);
+  --color-on-surface: var(--on-surface, #151c27);
+  --color-on-surface-variant: var(--on-surface-variant, #464555);
 
-  /* Dashboard-only utilities — safe fallbacks; real values live in .dashboard-theme */
-  --color-primary-fixed: var(--primary-fixed, var(--primary));
-  --color-primary-fixed-dim: var(--primary-fixed-dim, var(--primary));
-  --color-on-primary-container: var(--on-primary-container, var(--on-primary));
-  --color-on-primary-fixed: var(--on-primary-fixed, var(--on-primary));
-  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant, var(--primary));
-  --color-inverse-primary: var(--inverse-primary, var(--primary));
-  --color-secondary-container: var(--secondary-container, var(--secondary));
-  --color-on-secondary: var(--on-secondary, var(--on-primary));
-  --color-on-secondary-container: var(--on-secondary-container, var(--on-primary));
-  --color-tertiary-container: var(--tertiary-container, var(--tertiary));
-  --color-on-tertiary-container: var(--on-tertiary-container, var(--on-primary));
   --color-error: var(--error, #ba1a1a);
-  --color-on-error: var(--on-error, #ffffff);
-  --color-error-container: var(--error-container, var(--error));
-  --color-on-error-container: var(--on-error-container, var(--error));
-  --color-surface-dim: var(--surface-dim, var(--surface));
-  --color-surface-bright: var(--surface-bright, var(--surface));
-  --color-surface-container: var(--surface-container, var(--surface-container-low));
-  --color-surface-container-highest: var(--surface-container-highest, var(--surface-container-low));
-  --color-surface-tint: var(--surface-tint, var(--primary));
-  --color-inverse-surface: var(--inverse-surface, #2a313d);
-  --color-inverse-on-surface: var(--inverse-on-surface, #ebf1ff);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Utility scale defaults — dashboard overrides these inside .dashboard-theme */
-  --text-display: 3rem;
-  --text-display--line-height: 1.1;
-  --text-display--letter-spacing: -0.02em;
-  --text-display--font-weight: 700;
+  --text-display: var(--theme-text-display, 3rem);
+  --text-display--line-height: var(--theme-text-display-lh, 1.1);
+  --text-display--letter-spacing: var(--theme-text-display-tracking, -0.02em);
+  --text-display--font-weight: var(--theme-text-display-weight, 700);
 
-  --text-h1: 1.875rem;
-  --text-h1--line-height: 2.25rem;
-  --text-h1--letter-spacing: -0.01em;
-  --text-h1--font-weight: 600;
+  --text-h1: var(--theme-text-h1, 1.875rem);
+  --text-h1--line-height: var(--theme-text-h1-lh, 2.25rem);
+  --text-h1--letter-spacing: var(--theme-text-h1-tracking, -0.01em);
+  --text-h1--font-weight: var(--theme-text-h1-weight, 600);
 
-  --text-h2: 1.5rem;
-  --text-h2--line-height: 2rem;
-  --text-h2--letter-spacing: -0.01em;
-  --text-h2--font-weight: 600;
+  --text-h2: var(--theme-text-h2, 1.5rem);
+  --text-h2--line-height: var(--theme-text-h2-lh, 2rem);
+  --text-h2--letter-spacing: var(--theme-text-h2-tracking, -0.01em);
+  --text-h2--font-weight: var(--theme-text-h2-weight, 600);
 
-  --text-h3: 1.25rem;
-  --text-h3--line-height: 1.75rem;
-  --text-h3--letter-spacing: -0.01em;
-  --text-h3--font-weight: 600;
+  --text-h3: var(--theme-text-h3, 1.25rem);
+  --text-h3--line-height: var(--theme-text-h3-lh, 1.75rem);
+  --text-h3--letter-spacing: var(--theme-text-h3-tracking, -0.01em);
+  --text-h3--font-weight: var(--theme-text-h3-weight, 600);
 
-  --text-body-lg: 1rem;
-  --text-body-lg--line-height: 1.5rem;
-  --text-body-lg--font-weight: 400;
+  --text-body-lg: var(--theme-text-body-lg, 1rem);
+  --text-body-lg--line-height: var(--theme-text-body-lg-lh, 1.5rem);
+  --text-body-lg--font-weight: var(--theme-text-body-lg-weight, 400);
 
-  --text-body-md: 0.875rem;
-  --text-body-md--line-height: 1.25rem;
-  --text-body-md--font-weight: 400;
+  --text-body-md: var(--theme-text-body-md, 0.875rem);
+  --text-body-md--line-height: var(--theme-text-body-md-lh, 1.25rem);
+  --text-body-md--font-weight: var(--theme-text-body-md-weight, 400);
 
-  --text-label-md: 0.8125rem;
-  --text-label-md--line-height: 1.125rem;
-  --text-label-md--font-weight: 500;
+  --text-label-md: var(--theme-text-label-md, 0.8125rem);
+  --text-label-md--line-height: var(--theme-text-label-md-lh, 1.125rem);
+  --text-label-md--font-weight: var(--theme-text-label-md-weight, 500);
 
-  --text-caption: 0.75rem;
-  --text-caption--line-height: 1rem;
-  --text-caption--letter-spacing: 0.01em;
-  --text-caption--font-weight: 500;
+  --text-caption: var(--theme-text-caption, 0.75rem);
+  --text-caption--line-height: var(--theme-text-caption-lh, 1rem);
+  --text-caption--letter-spacing: var(--theme-text-caption-tracking, 0.01em);
+  --text-caption--font-weight: var(--theme-text-caption-weight, 500);
 
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
+  --spacing-xs: var(--theme-spacing-xs, 0.25rem);
+  --spacing-sm: var(--theme-spacing-sm, 0.5rem);
+  --spacing-md: var(--theme-spacing-md, 1rem);
+  --spacing-lg: var(--theme-spacing-lg, 1.5rem);
+  --spacing-xl: var(--theme-spacing-xl, 2rem);
+  --spacing-2xl: var(--theme-spacing-2xl, 3rem);
 }

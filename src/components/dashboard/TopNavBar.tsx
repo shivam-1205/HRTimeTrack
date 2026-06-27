@@ -13,20 +13,18 @@ export default function TopNavBar() {
   const { toggleMobile } = useSidebar();
 
   return (
-    <header className="sticky top-0  flex h-16 w-full items-center justify-between border-b border-outline-variant bg-surface/80 px-6 text-label-md shadow-sm backdrop-blur-md">
-      <div className="flex items-center gap-6">
+    <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between gap-4 border-b border-outline-variant/60 bg-surface-container-lowest/90 px-4 shadow-sm backdrop-blur-md sm:px-6">
+      <div className="flex min-w-0 flex-1 items-center gap-4">
         <button
           type="button"
           onClick={toggleMobile}
           aria-label="Toggle sidebar"
-          className="rounded-full p-2 text-on-surface-variant transition-colors hover:bg-surface-container hover:text-primary md:hidden"
+          className="shrink-0 rounded-full p-2 text-on-surface-variant transition-colors hover:bg-surface-container hover:text-primary md:hidden"
         >
           <MenuOutlinedIcon />
         </button>
 
-        <h1 className="text-h3 font-semibold text-primary md:hidden">Portal</h1>
-
-        <div className="relative hidden w-64 sm:block">
+        <div className="relative hidden w-full max-w-md sm:block">
           <SearchOutlinedIcon
             className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-outline"
             sx={{ fontSize: 20 }}
@@ -34,12 +32,12 @@ export default function TopNavBar() {
           <input
             type="text"
             placeholder="Search..."
-            className="w-full rounded-full border border-outline-variant bg-surface-container-lowest py-1.5 pl-10 pr-4 text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full rounded-full border border-outline-variant/60 bg-surface-container-low py-2 pl-10 pr-4 text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           />
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex shrink-0 items-center gap-2 sm:gap-3">
         <button
           type="button"
           className="rounded-full p-2 text-on-surface-variant transition-colors hover:bg-surface-container hover:text-primary"
@@ -56,17 +54,13 @@ export default function TopNavBar() {
 
         <button
           type="button"
-          className="hidden rounded-lg bg-primary px-4 py-2 text-label-md font-medium text-on-primary transition-opacity hover:opacity-90 sm:block"
+          className="hidden rounded-lg bg-primary px-4 py-2 text-label-md font-medium text-on-primary shadow-sm transition-opacity hover:opacity-90 sm:block"
         >
           Check In
         </button>
 
-        <div className="ml-1 h-8 w-8 overflow-hidden rounded-full border border-outline-variant bg-surface-container-high">
-          <img
-            src={PROFILE_IMAGE}
-            alt="User Profile"
-            className="h-full w-full object-cover"
-          />
+        <div className="ml-1 h-9 w-9 overflow-hidden rounded-full border border-outline-variant bg-surface-container-high">
+          <img src={PROFILE_IMAGE} alt="User Profile" className="h-full w-full object-cover" />
         </div>
       </div>
     </header>

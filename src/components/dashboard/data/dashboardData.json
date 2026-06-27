@@ -1,0 +1,117 @@
+{
+  "user": {
+    "name": "Shivam Singh",
+    "shiftLabel": "09:00 AM - 06:00 PM",
+    "shiftStart": "09:00",
+    "shiftEnd": "18:00"
+  },
+  "liveTracker": {
+    "startedAt": "09:05 AM",
+    "initialElapsedSeconds": 16335,
+    "initialStatus": "active"
+  },
+  "analyticsMeta": {
+    "weeklyWorkedHours": 38.5,
+    "weeklyTargetHours": 45,
+    "baseBreakMinutes": 45,
+    "maxBreakMinutes": 60,
+    "attendancePercent": 98
+  },
+  "analytics": [
+    {
+      "id": "total-worked",
+      "label": "Total Worked",
+      "value": "38.5 hrs",
+      "sub": "This Week",
+      "progress": 85,
+      "progressColor": "bg-primary",
+      "subColor": "text-outline",
+      "icon": "schedule"
+    },
+    {
+      "id": "break-time",
+      "label": "Break Time",
+      "value": "45 mins",
+      "sub": "Today",
+      "progress": 45,
+      "progressColor": "bg-amber-500",
+      "subColor": "text-outline",
+      "icon": "coffee"
+    },
+    {
+      "id": "attendance",
+      "label": "Attendance",
+      "value": "98%",
+      "sub": "Monthly",
+      "progress": null,
+      "progressColor": "",
+      "subColor": "text-outline",
+      "trend": "2%",
+      "showDonut": true,
+      "icon": "donut"
+    },
+    {
+      "id": "avg-login",
+      "label": "Avg Login",
+      "value": "08:55 AM",
+      "sub": "On Time",
+      "progress": null,
+      "progressColor": "",
+      "subColor": "text-emerald-600",
+      "icon": "login"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "1",
+      "dot": "bg-error",
+      "title": "System Maintenance",
+      "body": "Portal down briefly tonight at 11 PM.",
+      "time": "2 hours ago"
+    },
+    {
+      "id": "2",
+      "dot": "bg-primary",
+      "title": "Townhall Meeting",
+      "body": "Q3 Results discussion tomorrow at 2 PM.",
+      "time": "Yesterday"
+    },
+    {
+      "id": "3",
+      "dot": "bg-outline",
+      "title": "Policy Update",
+      "body": "New WFH guidelines uploaded.",
+      "time": "3 days ago"
+    }
+  ],
+  "recentAttendance": [
+    {
+      "date": "Jun 25, 2026",
+      "firstIn": "08:50 AM",
+      "lastOut": "06:15 PM",
+      "workedHours": "08h 45m",
+      "status": "Present"
+    },
+    {
+      "date": "Jun 24, 2026",
+      "firstIn": "09:30 AM",
+      "lastOut": "06:00 PM",
+      "workedHours": "07h 45m",
+      "status": "Late"
+    },
+    {
+      "date": "Jun 23, 2026",
+      "firstIn": "09:02 AM",
+      "lastOut": "06:10 PM",
+      "workedHours": "08h 08m",
+      "status": "Present"
+    },
+    {
+      "date": "Jun 20, 2026",
+      "firstIn": "--",
+      "lastOut": "--",
+      "workedHours": "00h 00m",
+      "status": "Absent"
+    }
+  ]
+}

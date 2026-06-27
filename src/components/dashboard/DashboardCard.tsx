@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 type DashboardCardProps = {
   children: ReactNode;
   className?: string;
-  variant?: "default" | "tinted";
+  variant?: "default" | "tinted" | "hero";
 };
 
 export default function DashboardCard({
@@ -12,13 +12,15 @@ export default function DashboardCard({
   variant = "default",
 }: DashboardCardProps) {
   const base =
-    variant === "tinted"
-      ? "bg-surface-container-low border-outline-variant/70"
-      : "bg-surface-container-lowest border-outline-variant/60";
+    variant === "hero"
+      ? "border-primary-fixed/30 bg-primary-fixed/25"
+      : variant === "tinted"
+        ? "border-outline-variant/50 bg-surface-container-low"
+        : "border-outline-variant/50 bg-surface-container-lowest";
 
   return (
     <div
-      className={`rounded-xl border shadow-[0_1px_3px_rgba(21,28,39,0.06)] ${base} ${className}`}
+      className={`rounded-xl border shadow-[0_4px_12px_rgba(53,37,205,0.05)] ${base} ${className}`}
     >
       {children}
     </div>
