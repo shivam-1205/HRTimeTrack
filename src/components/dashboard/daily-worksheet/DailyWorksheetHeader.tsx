@@ -16,7 +16,7 @@ export default function DailyWorksheetHeader() {
           <span className="h-1 w-1 rounded-full bg-outline-variant" />
           <span className="text-label-md font-semibold text-primary">{meta.userName}</span>
         </div>
-        <h1 className="text-h1 font-semibold text-on-surface md:text-[48px] md:leading-[1.1] md:tracking-[-0.02em]">
+        <h1 className="text-h1 font-semibold text-on-surface">
           Daily Worksheet
         </h1>
         <p className="mt-2 max-w-full text-body-lg leading-relaxed text-on-surface-variant">
