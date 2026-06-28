@@ -39,13 +39,13 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-on-background antialiased flex selection:bg-primary-container selection:text-on-primary-container">
+    <div className="min-h-screen bg-lp-surface text-lp-on-background antialiased flex selection:bg-lp-primary-container selection:text-lp-on-primary-container">
       <div className="flex w-full min-h-screen flex-col lg:flex-row">
         {/* Left Side - Hero Section */}
-        <div className="hidden lg:flex lg:w-1/2 bg-surface-container-low relative overflow-hidden flex-col items-center justify-center ">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div className="hidden lg:flex lg:w-1/2 bg-lp-surface-container-low relative overflow-hidden flex-col items-center justify-center p-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lp-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-          <div className="relative z-10 w-full max-w-xl rounded-xl shadow-[0_20px_40px_-15px_rgba(53,37,205,0.15)] border border-outline-variant/30 bg-surface-container-lowest/80 backdrop-blur-sm overflow-hidden">
+          <div className="relative z-10 w-full max-w-xl rounded-xl shadow-[0_20px_40px_-15px_rgba(53,37,205,0.15)] border border-lp-outline-variant/30 bg-lp-surface-container-lowest/80 backdrop-blur-sm overflow-hidden">
             <img
               alt="Dashboard Preview"
               className="w-full h-auto object-cover opacity-90"
@@ -53,28 +53,28 @@ export default function Register() {
             />
           </div>
           <div className="relative z-10 mt-4 text-center max-w-md">
-            <h2 className="font-h2 text-h2 text-on-surface mb-3">Join Our Community</h2>
-            <p className="font-body-md text-body-md text-on-surface-variant">
+            <h2 className="font-h2 text-h2 text-lp-on-surface mb-3">Join Our Community</h2>
+            <p className="font-body-md text-body-md text-lp-on-surface-variant">
               Start your journey with a platform designed for enterprise success and human-centric operations.
             </p>
           </div>
         </div>
 
         {/* Right Side - Registration Form */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-10 bg-surface-container-lowest">
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-10 bg-lp-surface">
           <div className="w-full max-w-[480px]">
             {/* Back Button */}
-            <Link href="/login" className="inline-flex items-center gap-2 mb-6 text-on-surface-variant hover:text-primary transition-colors">
+            <Link href="/login" className="inline-flex items-center gap-2 mb-6 text-lp-on-surface-variant hover:text-lp-primary transition-colors">
               <ArrowBackOutlinedIcon fontSize="small" />
               <span className="font-label-md text-label-md">Back to login</span>
             </Link>
 
             <div className="mb-4">
-              {/* <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-sm">
+              {/* <div className="w-12 h-12 bg-lp-primary rounded-lg flex items-center justify-center mb-6 shadow-sm">
                 <BusinessOutlinedIcon className="text-white" />
               </div> */}
-              <h1 className="font-h1 text-4xl text-on-surface mb-3">Create an account</h1>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <h1 className="font-h1 text-4xl text-lp-on-surface mb-3">Create an account</h1>
+              <p className="font-body-md text-body-md text-lp-on-surface-variant">
                 Get started with your free trial today.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function Register() {
             {/* Social Sign Up Options */}
             {/* <div className="flex flex-col gap-3 mb-8">
               <button
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-surface-container-lowest border-2 border-gray-300 rounded-xl hover:bg-surface-container-low transition-colors duration-200"
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-lp-surface-container-lowest border-2 border-gray-300 rounded-xl hover:bg-lp-surface-container-low transition-colors duration-200"
                 type="button"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -91,30 +91,30 @@ export default function Register() {
                   <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
                 </svg>
-                <span className="font-label-md text-label-md text-on-surface">Sign up with Google</span>
+                <span className="font-label-md text-label-md text-lp-on-surface">Sign up with Google</span>
               </button>
 
               <button
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-surface-container-lowest border-2 border-gray-300 rounded-xl hover:bg-surface-container-low transition-colors duration-200"
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-lp-surface-container-lowest border-2 border-gray-300 rounded-xl hover:bg-lp-surface-container-low transition-colors duration-200"
                 type="button"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                 </svg>
-                <span className="font-label-md text-label-md text-on-surface">Sign up with Microsoft</span>
+                <span className="font-label-md text-label-md text-lp-on-surface">Sign up with Microsoft</span>
               </button>
             </div> */}
 
             {/* <div className="relative flex items-center mb-8">
               <div className="flex-grow border-t border-2 border-gray-300/50"></div>
-              <span className="flex-shrink-0 mx-4 font-caption text-caption text-on-surface-variant">Or register with email</span>
+              <span className="flex-shrink-0 mx-4 font-caption text-caption text-lp-on-surface-variant">Or register with email</span>
               <div className="flex-grow border-t border-2 border-gray-300/50"></div>
             </div> */}
 
             {/* Registration Form */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
               <div>
-                <label htmlFor="fullName" className="block font-label-md text-label-md text-on-surface mb-2">
+                <label htmlFor="fullName" className="block font-label-md text-label-md text-lp-on-surface mb-2">
                   Full Name
                 </label>
                 <input
@@ -125,12 +125,12 @@ export default function Register() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm"
+                  className="w-full px-4 py-3 bg-lp-surface border border-lp-outline-variant rounded-xl font-body-md text-body-md text-lp-on-surface placeholder:text-lp-outline focus:outline-none focus:ring-2 focus:ring-lp-primary/20 focus:border-lp-primary transition-all shadow-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block font-label-md text-label-md text-on-surface mb-2">
+                <label htmlFor="email" className="block font-label-md text-label-md text-lp-on-surface mb-2">
                   Email address
                 </label>
                 <input
@@ -141,12 +141,12 @@ export default function Register() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="name@company.com"
-                  className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm"
+                  className="w-full px-4 py-3 bg-lp-surface border border-lp-outline-variant rounded-xl font-body-md text-body-md text-lp-on-surface placeholder:text-lp-outline focus:outline-none focus:ring-2 focus:ring-lp-primary/20 focus:border-lp-primary transition-all shadow-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="companyName" className="block font-label-md text-label-md text-on-surface mb-2">
+                <label htmlFor="companyName" className="block font-label-md text-label-md text-lp-on-surface mb-2">
                   Company Name
                 </label>
                 <input
@@ -157,12 +157,12 @@ export default function Register() {
                   value={formData.companyName}
                   onChange={handleChange}
                   placeholder="Acme Inc."
-                  className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm"
+                  className="w-full px-4 py-3 bg-lp-surface border border-lp-outline-variant rounded-xl font-body-md text-body-md text-lp-on-surface placeholder:text-lp-outline focus:outline-none focus:ring-2 focus:ring-lp-primary/20 focus:border-lp-primary transition-all shadow-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="password" className="block font-label-md text-label-md text-on-surface mb-2">
+                <label htmlFor="password" className="block font-label-md text-label-md text-lp-on-surface mb-2">
                   Password
                 </label>
                 <input
@@ -173,12 +173,12 @@ export default function Register() {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm"
+                  className="w-full px-4 py-3 bg-lp-surface border border-lp-outline-variant rounded-xl font-body-md text-body-md text-lp-on-surface placeholder:text-lp-outline focus:outline-none focus:ring-2 focus:ring-lp-primary/20 focus:border-lp-primary transition-all shadow-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="confirmPassword" className="block font-label-md text-label-md text-on-surface mb-2">
+                <label htmlFor="confirmPassword" className="block font-label-md text-label-md text-lp-on-surface mb-2">
                   Confirm Password
                 </label>
                 <input
@@ -189,7 +189,7 @@ export default function Register() {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm"
+                  className="w-full px-4 py-3 bg-lp-surface border border-lp-outline-variant rounded-xl font-body-md text-body-md text-lp-on-surface placeholder:text-lp-outline focus:outline-none focus:ring-2 focus:ring-lp-primary/20 focus:border-lp-primary transition-all shadow-sm"
                 />
               </div>
 
@@ -200,17 +200,17 @@ export default function Register() {
                   type="checkbox"
                   checked={formData.acceptTerms}
                   onChange={handleChange}
-                  className="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary/20"
+                  className="w-4 h-4 text-lp-primary border-lp-outline-variant rounded focus:ring-lp-primary/20"
                   required
                 />
-                <label htmlFor="acceptTerms" className="font-body-md text-body-md text-on-surface-variant">
+                <label htmlFor="acceptTerms" className="font-body-md text-body-md text-lp-on-surface-variant">
                   I agree to the{" "}
-                  <Link href="#" className="text-primary hover:text-primary-container transition-colors">
+                  <Link href="#" className="text-lp-primary hover:text-lp-primary-container transition-colors">
                     Terms of Service
                   </Link>
                   {" "}
                   and{" "}
-                  <Link href="#" className="text-primary hover:text-primary-container transition-colors">
+                  <Link href="#" className="text-lp-primary hover:text-lp-primary-container transition-colors">
                     Privacy Policy
                   </Link>
                 </label>
@@ -218,14 +218,14 @@ export default function Register() {
 
               <button
                 type="submit"
-                className="w-full mt-2 py-3 px-5 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg transition-all duration-200"
+                className="w-full mt-2 py-3 px-5 bg-primary hover:bg-primary-container text-white rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg transition-all duration-200"
               >
                 Create Account
               </button>
             </form>
 
             <div className="mt-8 text-center">
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-md text-body-md text-lp-on-surface-variant">
                 Already have an account?{" "}
                 <Link href="/login" className="font-label-md text-label-md text-primary hover:text-primary-container transition-colors">
                   Sign in

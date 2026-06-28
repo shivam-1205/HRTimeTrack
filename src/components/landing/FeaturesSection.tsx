@@ -1,4 +1,4 @@
-﻿// components/landing/features/FeaturesSection.tsx
+// components/landing/features/FeaturesSection.tsx
 "use client";
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import DescriptionIcon from '@mui/icons-material/Description';

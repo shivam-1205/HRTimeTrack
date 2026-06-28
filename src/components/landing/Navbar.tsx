@@ -1,5 +1,5 @@
-// components/landing/navbar/Navbar.tsx
 "use client";
+
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -15,57 +15,34 @@ export default function Navbar() {
   };
 
   const handleGetStarted = () => {
-    const loggedIn = typeof window !== "undefined" && localStorage.getItem("portalLoggedIn") === "true";
+    const loggedIn =
+      typeof window !== "undefined" && localStorage.getItem("portalLoggedIn") === "true";
     router.push(loggedIn ? "/pricing" : "/login");
   };
 
-  return (
-    <header className="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm h-16 px-6 flex items-center justify-between w-full">
-      <div className="flex items-center gap-4">
-        <span className="text-2xl font-bold text-[#4F46E5]">Shivam</span>
+  const linkClass = (href: string) =>
+    `py-4 transition-colors ${
+      isActive(href)
+        ? "border-b-2 border-primary font-bold text-primary"
+        : "text-on-surface-variant hover:text-primary"
+    }`;
 
-        <nav className="hidden md:flex gap-6 ml-6">
-          <Link
-            href="/"
-            className={`py-4 transition-colors ${
-              isActive("/")
-                ? "text-[#4F46E5] font-bold border-b-2 border-[#4F46E5]"
-                : "text-on-surface-variant hover:text-[#4F46E5]"
-            }`}
-          >
+  return (
+    <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-outline bg-surface-container-lowest px-6 shadow-sm">
+      <div className="flex items-center gap-4">
+        <span className="text-2xl font-bold text-primary">Shivam</span>
+
+        <nav className="ml-6 hidden gap-6 md:flex">
+          <Link href="/" className={linkClass("/")}>
             Home
           </Link>
-
-          <Link
-            href="/features"
-            className={`py-4 transition-colors ${
-              isActive("/features")
-                ? "text-[#4F46E5] font-bold border-b-2 border-[#4F46E5]"
-                : "text-on-surface-variant hover:text-[#4F46E5]"
-            }`}
-          >
+          <Link href="/features" className={linkClass("/features")}>
             Features
           </Link>
-
-          <Link
-            href="/pricing"
-            className={`py-4 transition-colors ${
-              isActive("/pricing")
-                ? "text-[#4F46E5] font-bold border-b-2 border-[#4F46E5]"
-                : "text-on-surface-variant hover:text-[#4F46E5]"
-            }`}
-          >
+          <Link href="/pricing" className={linkClass("/pricing")}>
             Pricing
           </Link>
-
-          <Link
-            href="/about-us"
-            className={`py-4 transition-colors ${
-              isActive("/about-us")
-                ? "text-[#4F46E5] font-bold border-b-2 border-[#4F46E5]"
-                : "text-on-surface-variant hover:text-[#4F46E5]"
-            }`}
-          >
+          <Link href="/about-us" className={linkClass("/about-us")}>
             About
           </Link>
         </nav>
@@ -76,21 +53,22 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="Search..."
-            className="px-4 py-2 border border-outline-variant rounded-full focus:outline-none focus:ring-2 focus:ring-[#4F46E5] transition-all text-black"
+            className="rounded-full border border-outline-variant px-4 py-2 text-on-surface transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             autoFocus
             onBlur={() => setIsSearchOpen(false)}
           />
         ) : (
           <button
+            type="button"
             onClick={() => setIsSearchOpen(true)}
-            className="hover:text-[#4F46E5] transition-colors p-2 rounded-full hover:bg-surface-container-high"
+            className="rounded-full p-2 transition-colors hover:bg-surface-container-high hover:text-primary"
+            aria-label="Search"
           >
             <svg
-              className="w-5 h-5 text-primary"
+              className="h-5 w-5 text-on-surface-variant"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -103,8 +81,9 @@ export default function Navbar() {
         )}
 
         <button
+          type="button"
           onClick={handleGetStarted}
-          className="hidden md:flex items-center justify-center px-6 py-2 bg-[#4F46E5] text-white rounded-full shadow-sm hover:opacity-90 transition-opacity"
+          className="hidden items-center justify-center rounded-full bg-primary px-6 py-2 text-on-primary shadow-sm transition-opacity hover:opacity-90 md:flex"
         >
           Get Started
         </button>

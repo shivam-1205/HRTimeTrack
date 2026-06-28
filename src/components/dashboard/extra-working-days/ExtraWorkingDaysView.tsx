@@ -1,6 +1,6 @@
 "use client";
 
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import MoreTimeOutlinedIcon from "@mui/icons-material/MoreTimeOutlined";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
@@ -90,7 +90,7 @@ function ExtraWorkingDaysContent() {
       <ExtraDaysNotification />
 
       <PageIntro
-        icon={<CalendarMonthOutlinedIcon sx={{ fontSize: 22 }} />}
+        icon={<MoreTimeOutlinedIcon sx={{ fontSize: 22 }} />}
         title="My Extra Working Days"
         description={
           <>

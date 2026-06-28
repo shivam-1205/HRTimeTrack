@@ -98,13 +98,13 @@ export default function VerifyOTP() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-on-background antialiased flex selection:bg-primary-container selection:text-on-primary-container">
+    <div className="min-h-screen bg-lp-surface text-lp-on-background antialiased flex selection:bg-lp-primary-container selection:text-lp-on-primary-container">
       <div className="flex w-full min-h-screen flex-col lg:flex-row">
         {/* Left Side - Hero Section */}
-        <div className="hidden lg:flex lg:w-1/2 bg-surface-container-low relative overflow-hidden flex-col items-center justify-center p-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div className="hidden lg:flex lg:w-1/2 bg-lp-surface-container-low relative overflow-hidden flex-col items-center justify-center p-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lp-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-          <div className="relative z-10 w-full max-w-xl rounded-xl shadow-[0_20px_40px_-15px_rgba(53,37,205,0.15)] border border-outline-variant/30 bg-surface-container-lowest/80 backdrop-blur-sm overflow-hidden">
+          <div className="relative z-10 w-full max-w-xl rounded-xl shadow-[0_20px_40px_-15px_rgba(53,37,205,0.15)] border border-lp-outline-variant/30 bg-lp-surface-container-lowest/80 backdrop-blur-sm overflow-hidden">
             <img
               alt="Dashboard Preview"
               className="w-full h-auto object-cover opacity-90"
@@ -112,37 +112,37 @@ export default function VerifyOTP() {
             />
           </div>
           <div className="relative z-10 mt-10 text-center max-w-md">
-            <h2 className="font-h2 text-h2 text-on-surface mb-3">Verify Your Identity</h2>
-            <p className="font-body-md text-body-md text-on-surface-variant">
+            <h2 className="font-h2 text-h2 text-lp-on-surface mb-3">Verify Your Identity</h2>
+            <p className="font-body-md text-body-md text-lp-on-surface-variant">
               Secure your account with two-factor authentication for enhanced protection.
             </p>
           </div>
         </div>
 
         {/* Right Side - OTP Verification Form */}
-        <div className="w-full lg:w-1/2 flex items-stretch justify-center p-8 sm:p-10 bg-surface-container-lowest">
+        <div className="w-full lg:w-1/2 flex items-stretch justify-center p-8 sm:p-10 bg-lp-surface">
           <div className="w-full max-w-[480px] md:mt-12 mt-1">
             {/* Back Button */}
-            <Link href="/register" className="inline-flex items-center gap-2 mb-6 text-on-surface-variant hover:text-primary transition-colors">
+            <Link href="/register" className="inline-flex items-center gap-2 mb-6 text-lp-on-surface-variant hover:text-lp-primary transition-colors">
               <ArrowBackOutlinedIcon fontSize="small" />
               <span className="font-label-md text-label-md">Back to registration</span>
             </Link>
 
             <div className="mb-8">
-              {/* <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-sm">
+              {/* <div className="w-12 h-12 bg-lp-primary rounded-lg flex items-center justify-center mb-6 shadow-sm">
                 <BusinessOutlinedIcon className="text-white" />
               </div> */}
-              <h1 className="font-h1 text-4xl text-on-surface mb-3">Verify your email</h1>
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <h1 className="font-h1 text-4xl text-lp-on-surface mb-3">Verify your email</h1>
+              <p className="font-body-md text-body-md text-lp-on-surface-variant">
                 We've sent a verification code to{" "}
-                <span className="font-semibold text-primary">{email || "your email"}</span>
+                <span className="font-semibold text-lp-primary">{email || "your email"}</span>
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               {/* OTP Input Fields */}
               <div>
-                <label className="block font-label-md text-label-md text-on-surface mb-4 text-center">
+                <label className="block font-label-md text-label-md text-lp-on-surface mb-4 text-center">
                   Enter 6-digit verification code
                 </label>
                 <div className="flex justify-center gap-3">
@@ -158,7 +158,7 @@ export default function VerifyOTP() {
                       value={digit}
                       onChange={(e) => handleChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}
-                      className="w-14 h-14 text-center text-2xl font-semibold bg-surface border-2 border-outline-variant rounded-xl text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm"
+                      className="w-14 h-14 text-center text-2xl font-semibold bg-lp-surface border-2 border-lp-outline-variant rounded-xl text-lp-on-surface focus:outline-none focus:ring-2 focus:ring-lp-primary/20 focus:border-lp-primary transition-all shadow-sm"
                       autoFocus={index === 0}
                     />
                   ))}
@@ -168,15 +168,15 @@ export default function VerifyOTP() {
               {/* Timer and Resend */}
               <div className="text-center">
                 {!canResend ? (
-                  <p className="font-body-md text-body-md text-on-surface-variant">
+                  <p className="font-body-md text-body-md text-lp-on-surface-variant">
                     Code expires in{" "}
-                    <span className="font-semibold text-primary">{formatTime(timeLeft)}</span>
+                    <span className="font-semibold text-lp-primary">{formatTime(timeLeft)}</span>
                   </p>
                 ) : (
                   <button
                     type="button"
                     onClick={handleResendCode}
-                    className="font-label-md text-label-md text-primary hover:text-primary-container transition-colors"
+                    className="font-label-md text-label-md text-lp-primary hover:text-lp-primary-container transition-colors"
                   >
                     Resend verification code
                   </button>
@@ -185,16 +185,16 @@ export default function VerifyOTP() {
 
               <button
                 type="submit"
-                className="w-full mt-2 py-3 px-5 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg transition-all duration-200"
+                className="w-full mt-2 py-3 px-5 bg-lp-primary hover:bg-lp-primary-container text-lp-on-primary rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg transition-all duration-200"
               >
                 Verify Account
               </button>
             </form>
 
             <div className="mt-8 text-center">
-              <p className="font-body-md text-body-md text-on-surface-variant">
+              <p className="font-body-md text-body-md text-lp-on-surface-variant">
                 Wrong email address?{" "}
-                <Link href="/register" className="font-label-md text-label-md text-primary hover:text-primary-container transition-colors">
+                <Link href="/register" className="font-label-md text-label-md text-lp-primary hover:text-lp-primary-container transition-colors">
                   Edit email
                 </Link>
               </p>

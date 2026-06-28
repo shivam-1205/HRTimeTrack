@@ -1,0 +1,150 @@
+{
+  "success": true,
+  "message": "Employees fetched successfully",
+  "data": {
+    "meta": {
+      "companyName": "Enterprise HRMS",
+      "totalEmployees": 12
+    },
+    "departments": [
+      { "value": "all", "label": "All Departments" },
+      { "value": "FRONT-END", "label": "Front-end" },
+      { "value": "ENGINEERING", "label": "Engineering" },
+      { "value": "PRODUCT", "label": "Product" },
+      { "value": "HR", "label": "Human Resources" },
+      { "value": "DESIGN", "label": "Design" },
+      { "value": "MARKETING", "label": "Marketing" }
+    ],
+    "statuses": [
+      { "value": "all", "label": "All Status" },
+      { "value": "Active", "label": "Active" },
+      { "value": "On Leave", "label": "On Leave" },
+      { "value": "Probation", "label": "Probation" }
+    ],
+    "employees": [
+      {
+        "id": "emp-1",
+        "name": "Shivam Singh",
+        "department": "FRONT-END",
+        "designation": "Full Stack Developer",
+        "phone": "8208746919",
+        "joiningDate": "Sep 1, 2025",
+        "email": "shivam.singh@enterprise.com",
+        "location": "San Francisco, CA",
+        "employeeId": "EMP-1024",
+        "manager": "Alex Mercer",
+        "status": "Active",
+        "skills": ["React", "Next.js", "Node.js"],
+        "bio": "Building the HRMS frontend and internal tools."
+      },
+      {
+        "id": "emp-2",
+        "name": "Sarah Jenkins",
+        "department": "ENGINEERING",
+        "designation": "Senior Frontend Engineer",
+        "phone": "8208746920",
+        "joiningDate": "Jan 15, 2024",
+        "email": "s.jenkins@enterprise.com",
+        "location": "Remote (EST)",
+        "employeeId": "EMP-1008",
+        "manager": "Marcus Chen",
+        "status": "Active",
+        "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuApZHU6w6rj8SoCx2OQtfZu8nQxrdCnmYnBPGOfbS6nnbSwYPHqyEt-VYnRJvylrPlfvmN57bMSSllqqIHjvjtRcE3QpVagtNv9nLqzpddKVtGHJ2npAvten3e3laVe2zqCajQZuNFWW9kRgB9X--myjRXl42uq5-DKfGjEgUn-xM4REpP3s5VNSRgviNukvTMyLEf6d4XqB3BXaaexq8FaMrEovgSGbE5LAhw6YYBLhmhkOibJCr1w6YuIyD3J9Tz3DdeoGT1-D1gw",
+        "skills": ["TypeScript", "React", "Design Systems"],
+        "bio": "Leads the component library and accessibility initiatives."
+      },
+      {
+        "id": "emp-3",
+        "name": "Marcus Chen",
+        "department": "PRODUCT",
+        "designation": "Product Lead",
+        "phone": "8208746921",
+        "joiningDate": "Mar 8, 2023",
+        "email": "m.chen@enterprise.com",
+        "location": "New York HQ",
+        "employeeId": "EMP-0992",
+        "manager": "Elena Rodriguez",
+        "status": "Active",
+        "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuDU1Xe5C3QiTIRfHX_8fMbQ2sraRP16hyyN8FlFlP0_rCilRFxBF9QlP-nWXhK1rsem3O6H6zWjoxD8q0zLVU7dkXRrcrgXvx7hMIb2qTMCz_ueGSGHhHo568WHlyhqg_NsMQrBJ9PUVJmtspLjzXN_HDIPmsbjwmjbohjJY3RoS6klm7-DSaI9xU-tXTGsNRaOrL7lSUjG4O10jlG8FuqgynQehpYwZ61DRb9_q6mYKTcSOiZumxaNSe64D2GAYa3ZueHY0Z0rF6VO",
+        "skills": ["Roadmapping", "Agile", "Stakeholder Management"],
+        "bio": "Owns the HRMS product roadmap and quarterly planning."
+      },
+      {
+        "id": "emp-4",
+        "name": "Elena Rodriguez",
+        "department": "HR",
+        "designation": "HR Director",
+        "phone": "8208746922",
+        "joiningDate": "Jun 20, 2022",
+        "email": "e.rodriguez@enterprise.com",
+        "location": "London Office",
+        "employeeId": "EMP-0871",
+        "manager": "Alex Mercer",
+        "status": "On Leave",
+        "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-5TeymVZN-43IlgxI7yMyrKNplON6Ea_eKhFiLpPexM1ywbV4YMNIMSWVDdphjAwhoWN6HOd09Z6Jl2HLsYuYFCYDMRT4Al68b6wcsKOIvLB-IUmFAhDgfKm9DBbC3Q1JHp2Loew2ogjI4kOwUdwJE73jhGSjqBqgvzvcc2z4LM2kEBKwoqB4CNwV6hjq0wN4qwqhE-ITEYbbz4eF3PhpurZqOx3e651Kscc9R-IoVeGU7ENazwwVfxLsmJqVbXJP4L7hpE0YO0su",
+        "skills": ["Policy", "Compliance", "Employee Relations"],
+        "bio": "Oversees HR operations across US and UK offices."
+      },
+      {
+        "id": "emp-5",
+        "name": "Alex Mercer",
+        "department": "ENGINEERING",
+        "designation": "Engineering Manager",
+        "phone": "8208746923",
+        "joiningDate": "Feb 10, 2021",
+        "email": "a.mercer@enterprise.com",
+        "location": "San Francisco, CA",
+        "employeeId": "EMP-0755",
+        "manager": "Elena Rodriguez",
+        "status": "Active",
+        "skills": ["Leadership", "Architecture", "Hiring"],
+        "bio": "Manages the front-end and platform engineering teams."
+      },
+      {
+        "id": "emp-6",
+        "name": "Priya Sharma",
+        "department": "ENGINEERING",
+        "designation": "Backend Engineer",
+        "phone": "8208746924",
+        "joiningDate": "Nov 3, 2024",
+        "email": "p.sharma@enterprise.com",
+        "location": "Remote (IST)",
+        "employeeId": "EMP-1015",
+        "manager": "Alex Mercer",
+        "status": "Active",
+        "skills": ["Python", "PostgreSQL", "API Design"],
+        "bio": "Works on payroll and attendance microservices."
+      },
+      {
+        "id": "emp-7",
+        "name": "James Okafor",
+        "department": "DESIGN",
+        "designation": "UI/UX Designer",
+        "phone": "8208746925",
+        "joiningDate": "Apr 22, 2025",
+        "email": "j.okafor@enterprise.com",
+        "location": "London Office",
+        "employeeId": "EMP-1031",
+        "manager": "Marcus Chen",
+        "status": "Probation",
+        "skills": ["Figma", "Prototyping", "User Research"],
+        "bio": "Designs dashboard experiences and mobile flows."
+      },
+      {
+        "id": "emp-8",
+        "name": "Lisa Park",
+        "department": "MARKETING",
+        "designation": "Growth Marketing Lead",
+        "phone": "8208746926",
+        "joiningDate": "Aug 7, 2023",
+        "email": "l.park@enterprise.com",
+        "location": "New York HQ",
+        "employeeId": "EMP-0944",
+        "manager": "Elena Rodriguez",
+        "status": "Active",
+        "skills": ["SEO", "Content", "Analytics"],
+        "bio": "Drives employer branding and product marketing campaigns."
+      }
+    ]
+  }
+}

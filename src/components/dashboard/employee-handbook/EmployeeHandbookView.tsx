@@ -24,15 +24,6 @@ export default function EmployeeHandbookView() {
 
   return (
     <div className="flex min-w-0 flex-col gap-6">
-      <nav className="text-caption text-on-surface-variant">
-        <Link href="/dashboard" className="hover:text-primary">
-          Company Hub
-        </Link>
-        <span className="mx-2">›</span>
-        <span>HR Policies</span>
-        <span className="mx-2">›</span>
-        <span className="text-on-surface">Employee Handbook</span>
-      </nav>
 
       <header className="flex w-full flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0 flex-1">

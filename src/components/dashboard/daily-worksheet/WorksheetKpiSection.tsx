@@ -63,7 +63,7 @@ export default function WorksheetKpiSection() {
         </article>
 
         <article
-          className={`relative flex flex-col justify-between overflow-hidden rounded-xl bg-primary-container p-4 ${CARD_SHADOW}`}
+          className={`relative flex flex-col justify-between overflow-hidden rounded-xl bg-surface-container-lowest p-4 ${CARD_SHADOW}`}
         >
           <div className="pointer-events-none absolute -top-4 -right-4 h-24 w-24 rounded-full bg-white/10 blur-xl" />
           <div className="relative z-10 mb-2 flex items-start justify-between">

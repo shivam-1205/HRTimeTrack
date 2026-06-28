@@ -10,7 +10,7 @@ type PageIntroProps = {
 
 export default function PageIntro({
   icon,
-  iconClassName = "bg-emerald-500/10 text-emerald-600",
+  iconClassName = "bg-primary-container/10 text-primary",
   title,
   description,
   action,
@@ -18,23 +18,23 @@ export default function PageIntro({
   return (
     <header className="flex w-full flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
       <div className="min-w-0 flex-1">
-        <div className="mb-3 flex items-start gap-3">
-          <div
-            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${iconClassName}`}
-          >
-            {icon}
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-3">
+            <div
+              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${iconClassName}`}
+            >
+              {icon}
+            </div>
+            <h1 className="min-w-0 text-h1 font-semibold text-on-surface">{title}</h1>
           </div>
-          <div className="min-w-0">
-            <h1 className="text-h1 font-semibold text-on-surface">{title}</h1>
-            {description && (
-              <div className="mt-1 max-w-3xl text-body-md leading-relaxed text-on-surface-variant">
-                {description}
-              </div>
-            )}
-          </div>
+          {description && (
+            <div className="max-w-3xl pl-[calc(2.5rem+0.75rem)] text-body-md leading-relaxed text-on-surface-variant">
+              {description}
+            </div>
+          )}
         </div>
       </div>
-      {action && <div className="shrink-0">{action}</div>}
+      {action && <div className="shrink-0 lg:pt-1">{action}</div>}
     </header>
   );
 }
